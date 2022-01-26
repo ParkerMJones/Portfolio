@@ -5,11 +5,10 @@ import Link from "./components/Link";
 
 function App() {
   return (
-    <div>
-      {/* Hello */}
+    <>
       <Starfield />
       <Link />
-    </div>
+    </>
   );
 }
 

@@ -17,7 +17,7 @@ const Stars = () => {
 
   for (let i = 0; i < count; i++) {
     const i3 = i * 3;
-    positions[i3] = (Math.random() - 0.5) * 3000;
+    positions[i3] = (Math.random() - 0.5) * 2000;
     positions[i3 + 1] = (Math.random() - 0.5) * 300;
     positions[i3 + 2] = (Math.random() - 0.5) * 500;
   }
@@ -37,7 +37,6 @@ const Stars = () => {
         particlesGeometry.attributes.position.array[i3 + 2] -= 500;
       }
     }
-
     particlesGeometry.attributes.position.needsUpdate = true;
   });
 
