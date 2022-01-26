@@ -4,7 +4,7 @@ import Projects from "./components/Pages/Projects/Projects";
 import Animations from "./components/Pages/Animations/Animations";
 import About from "./components/Pages/About/About";
 import Contact from "./components/Pages/Contact/Contact";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
