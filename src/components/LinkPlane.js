@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Link() {
+export default function Links() {
   return (
     <div
       style={{
@@ -53,11 +53,11 @@ const LinkBox = styled.h2`
   color: white;
   width: 40%;
   height: 35%;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 10px;
-  box-shadow: inset 0 0 0.25rem 0.25rem rgba(255, 255, 255, 0.15);
-  background-color: rgba(255, 255, 255, 0.025);
-  backdrop-filter: blur(0.35px);
+  box-shadow: inset 0 0 0.5rem 0.25rem rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(0.25px);
   text-align: center;
 
   &:before {
