@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import { Canvas, useFrame, clock } from "@react-three/fiber";
-import { OrbitControls, Stats } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
 import particle from "../assets/1.png";
 import { AdditiveBlending } from "three";
+// import Link from "./LinkPlane";
 
 const Stars = () => {
   // Particles
@@ -18,8 +18,8 @@ const Stars = () => {
   for (let i = 0; i < count; i++) {
     const i3 = i * 3;
     positions[i3] = (Math.random() - 0.5) * 2000;
-    positions[i3 + 1] = (Math.random() - 0.5) * 300;
-    positions[i3 + 2] = (Math.random() - 0.5) * 500;
+    positions[i3 + 1] = (Math.random() - 0.5) * 600;
+    positions[i3 + 2] = (Math.random() - 0.5) * 300;
   }
 
   particlesGeometry.setAttribute(
@@ -29,7 +29,7 @@ const Stars = () => {
 
   // Animation
   const acceleration = 0.5;
-  useFrame(({ clock }) => {
+  useFrame(() => {
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
       particlesGeometry.attributes.position.array[i3 + 2] += acceleration;
@@ -67,7 +67,6 @@ const Starfield = () => {
     >
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Stars />
-        <OrbitControls />
       </Canvas>
     </div>
   );
