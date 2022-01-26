@@ -1,13 +1,32 @@
 import "./App.css";
-import Starfield from "./components/Starfield";
-import Links from "./components/LinkPlane";
+import Home from "./components/Pages/Home/Home";
+import Projects from "./components/Pages/Projects/Projects";
+import Animations from "./components/Pages/Animations/Animations";
+import About from "./components/Pages/About/About";
+import Contact from "./components/Pages/Contact/Contact";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Starfield />
-      <Links />
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/projects">
+          <Projects />
+        </Route>
+        <Route path="/animations">
+          <Animations />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

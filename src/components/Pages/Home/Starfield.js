@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
-import particle from "../assets/1.png";
+import particle from "../../../assets/1.png";
 import { AdditiveBlending } from "three";
 // import Link from "./LinkPlane";
 
