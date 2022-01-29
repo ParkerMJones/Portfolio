@@ -1,3 +1,9 @@
+import FadeIn from "../../FadeIn";
+
 export default function Projects() {
-  return <div>Projects</div>;
+  return (
+    <div>
+      <FadeIn>Projects</FadeIn>
+    </div>
+  );
 }

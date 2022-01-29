@@ -5,6 +5,7 @@ import Animations from "./components/Pages/Animations/Animations";
 import About from "./components/Pages/About/About";
 import Contact from "./components/Pages/Contact/Contact";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 function App() {
   return (

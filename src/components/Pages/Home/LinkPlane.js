@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React from "react";
+import DelayLink from "react-delay-link";
+// import { acceleration } from "./Starfield";
 
-export default function Links() {
+export default function Links({ onWarp }) {
   return (
     <div
       style={{
@@ -10,7 +12,12 @@ export default function Links() {
         flexWrap: "wrap",
       }}
     >
-      <Link to="/projects">
+      <DelayLink
+        to="/projects"
+        delay={2000}
+        replace={false}
+        clickAction={onWarp}
+      >
         <LinkBox
           style={{
             position: "absolute",
@@ -20,8 +27,13 @@ export default function Links() {
         >
           Projects
         </LinkBox>
-      </Link>
-      <Link to="/animations">
+      </DelayLink>
+      <DelayLink
+        to="/animations"
+        delay={2000}
+        replace={false}
+        clickAction={onWarp}
+      >
         <LinkBox
           style={{
             position: "absolute",
@@ -31,8 +43,8 @@ export default function Links() {
         >
           Animations
         </LinkBox>
-      </Link>
-      <Link to="/about">
+      </DelayLink>
+      <DelayLink to="/about" delay={2000} replace={false} clickAction={onWarp}>
         <LinkBox
           style={{
             position: "absolute",
@@ -42,8 +54,13 @@ export default function Links() {
         >
           About Me
         </LinkBox>
-      </Link>
-      <Link to="/contact">
+      </DelayLink>
+      <DelayLink
+        to="/contact"
+        delay={2000}
+        replace={false}
+        clickAction={onWarp}
+      >
         <LinkBox
           style={{
             position: "absolute",
@@ -53,7 +70,7 @@ export default function Links() {
         >
           Contact
         </LinkBox>
-      </Link>
+      </DelayLink>
     </div>
   );
 }
