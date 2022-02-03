@@ -1,7 +1,9 @@
 import * as THREE from "three";
+import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import particle from "../../../assets/1.png";
 import { AdditiveBlending } from "three";
+import Spaceship from "./Spaceship";
 
 const Stars = ({ acceleration, starCount }) => {
   // Particles
@@ -41,7 +43,7 @@ const Stars = ({ acceleration, starCount }) => {
   return (
     <points args={[particlesGeometry]}>
       <pointsMaterial
-        size={0.1}
+        size={0.25}
         sizeAttenuation={true}
         color={"white"}
         map={particlesTexture}
@@ -65,6 +67,9 @@ const Starfield = ({ acceleration, starCount }) => {
     >
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Stars acceleration={acceleration} starCount={starCount} />
+        <Suspense fallback={null}>
+          <Spaceship />
+        </Suspense>
       </Canvas>
     </div>
   );
