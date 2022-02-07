@@ -16,7 +16,7 @@ const transitionStyles = {
 
 export default function FadeIn({ children }) {
   return (
-    <div style={{ backgroundColor: "black", color: "white", height: "100vh" }}>
+    <div>
       <Transition in={true} appear={true} timeout={duration}>
         {(state) => (
           <div
