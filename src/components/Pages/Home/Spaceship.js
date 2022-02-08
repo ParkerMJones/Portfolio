@@ -6,30 +6,11 @@ import useMousePosition from "../../../hooks/MouseTracker";
 
 export default function Spaceship() {
   const { scene } = useLoader(GLTFLoader, spaceship);
-  const ParticleEmitter1Position = scene.traverse((child) => {
-    if (child.name === "ParticleEmitter1") {
-      return child.position.x;
-    }
-    // useEffect(() => {
-    //   scene.traverse((child) => {
-    //     if (child.name === "ParticleEmitter1") {
-    //       console.log(child.position);
-    //     }
-    //   });
-  });
-  // // const particleEmitter1 = scene.children.find((child) => {
-  // //   return child.name === "ParticleEmitter1";
-  // // });
-  // const particleEmitter2 = scene.children.find((child) => {
-  //   console.log(child.name === "ParticleEmitter2");
-  //   return child.name === "ParticleEmitter2";
+  // const ParticleEmitter1Position = scene.traverse((child) => {
+  //   if (child.name === "ParticleEmitter1") {
+  //     return child.position.x;
+  //   }
   // });
-  // const particleEmitter3 = scene.children.find(
-  //   (child) => child.name === "ParticleEmitter3"
-  // );
-  // const particleEmitter4 = scene.children.find(
-  //   (child) => child.name === "ParticleEmitter4"
-  // );
 
   let { x, y } = useMousePosition();
 

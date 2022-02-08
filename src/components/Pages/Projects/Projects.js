@@ -3,11 +3,11 @@ import { Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 
-import Oasis from "./Oasis2";
+import Oasis from "./Oasis";
+import clouds from "../../../assets/images/clouds.jpg";
 import Dumbbell from "./Dumbbell";
 import BeatPad from "./MPC";
 import Bolex from "./Bolex";
-import clouds from "../../../assets/images/clouds3.jpg";
 
 import SolinHome from "./Solin/SolinHome";
 import FreesoundHome from "./Freesound/FreesoundHome";
