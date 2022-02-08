@@ -28,28 +28,13 @@ export default function Links({ onWarp }) {
           Projects
         </LinkBox>
       </DelayLink>
-      <DelayLink
-        to="/animations"
-        delay={1500}
-        replace={false}
-        clickAction={onWarp}
-      >
+
+      <DelayLink to="/about" delay={1500} replace={false} clickAction={onWarp}>
         <LinkBox
           style={{
             position: "absolute",
             top: "5%",
             right: "5%",
-          }}
-        >
-          Animations
-        </LinkBox>
-      </DelayLink>
-      <DelayLink to="/about" delay={1500} replace={false} clickAction={onWarp}>
-        <LinkBox
-          style={{
-            position: "absolute",
-            bottom: "5%",
-            left: "5%",
           }}
         >
           About Me
@@ -65,10 +50,26 @@ export default function Links({ onWarp }) {
           style={{
             position: "absolute",
             bottom: "5%",
-            right: "5%",
+            left: "5%",
           }}
         >
           Contact
+        </LinkBox>
+      </DelayLink>
+      <DelayLink
+        to="/credits"
+        delay={1500}
+        replace={false}
+        clickAction={onWarp}
+      >
+        <LinkBox
+          style={{
+            position: "absolute",
+            bottom: "5%",
+            right: "5%",
+          }}
+        >
+          Credits
         </LinkBox>
       </DelayLink>
     </div>

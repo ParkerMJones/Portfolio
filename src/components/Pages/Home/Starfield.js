@@ -59,9 +59,7 @@ const Starfield = ({ acceleration, starCount }) => {
   return (
     <div
       style={{
-        height: "100vh",
-        width: "100vw",
-        position: "absolute",
+        height: "calc(100vh - 36px)",
         backgroundColor: "black",
       }}
     >
