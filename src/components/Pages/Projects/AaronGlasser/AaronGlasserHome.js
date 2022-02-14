@@ -44,7 +44,8 @@ export default function AaronGlasserHome() {
           intriguing and often obsure films to those who are interested.
         </S.FlexDescription>
       </S.FlexContainer>
-
+      <br />
+      <br />
       <S.FlexContainer>
         <S.FlexDescription>
           <S.SubHeader style={{ color: "black" }}>In Philosophy</S.SubHeader>

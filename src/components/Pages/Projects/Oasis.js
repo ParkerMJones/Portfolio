@@ -1,28 +1,35 @@
-import oasis from "../../../assets/models/oasis.glb";
-import { useLoader } from "@react-three/fiber";
+import oasis from "../../../assets/models/oasisuncompressed.glb";
+import * as THREE from "three";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { TextureLoader } from "three/src/loaders/TextureLoader";
+import oasisBaked from "../../../assets/materials/Oasisbake.jpg";
 
 export default function Oasis() {
-  const { scene } = useLoader(GLTFLoader, oasis);
+  const bakedTexture = useLoader(TextureLoader, oasisBaked);
+  bakedTexture.flipY = false;
+  bakedTexture.encoding = THREE.sRGBEncoding;
+  const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture });
+  const gltf = useLoader(GLTFLoader, oasis);
+  gltf.scene.traverse(function (child) {
+    child.material = bakedMaterial;
+  });
   return (
     <>
       <div style={{ position: "absolute", height: "100vh" }}>
         <Canvas
-          camera={{ position: [5, 4, 5] }}
+          colorManagement="srgb"
+          camera={{ position: [0, 0, 0] }}
           style={{ height: "100vh", width: "100vw" }}
         >
-          <OrbitControls />
-          <ambientLight intensity={1} is="custom" />
           <mesh>
             <primitive
               is="custom"
-              object={scene}
+              object={gltf.scene}
               dispose={null}
               scale={8}
-              position={[6, 2, 30]}
-              rotation={[-0.5, 1.15, 0.4]}
+              position={[13, -7, 10]}
+              rotation={[Math.PI * 0.07, Math.PI * 0.36, 0]}
             />
           </mesh>
         </Canvas>

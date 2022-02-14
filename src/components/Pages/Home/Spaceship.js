@@ -1,4 +1,3 @@
-// import { useGLTF, useHelper } from "@react-three/drei";
 import spaceship from "../../../assets/models/spaceship.glb";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";

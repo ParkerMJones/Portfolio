@@ -5,7 +5,7 @@ import particle from "../../../assets/1.png";
 import { AdditiveBlending } from "three";
 import Spaceship from "./Spaceship";
 
-const Stars = ({ acceleration, starCount }) => {
+export const Stars = ({ acceleration, starCount }) => {
   // Particles
   // Texture
   const particlesTexture = new THREE.TextureLoader().load(particle);
@@ -43,7 +43,7 @@ const Stars = ({ acceleration, starCount }) => {
   return (
     <points args={[particlesGeometry]}>
       <pointsMaterial
-        size={0.25}
+        size={0.35}
         sizeAttenuation={true}
         color={"white"}
         map={particlesTexture}
@@ -59,7 +59,7 @@ const Starfield = ({ acceleration, starCount }) => {
   return (
     <div
       style={{
-        height: "calc(100vh - 36px)",
+        height: "calc(100vh - 40px)",
         backgroundColor: "black",
       }}
     >
