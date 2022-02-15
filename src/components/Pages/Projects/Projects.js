@@ -1,9 +1,10 @@
 import FadeIn from "../../FadeIn";
 import { Suspense } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 
+import backArrow from "../../../assets/arrow-left.svg";
 import Oasis from "./Oasis";
 import Dumbbell from "./Dumbbell";
 import BeatPad from "./MPC";
@@ -26,43 +27,63 @@ const NightSky = ({ acceleration, starCount }) => {
 
 export default function Projects() {
   return (
-    <Switch>
-      <Route exact path="/projects">
-        <FadeIn>
-          <NightSky acceleration={0.05} starCount={2000} />
-          <Suspense fallback={null}>
-            <Oasis />
-          </Suspense>
-          <ProjectsContainer>
-            <h1
-              style={{
-                color: "white",
-                margin: "0 auto",
-              }}
-            >
-              Projects
-            </h1>
-            <ModelsContainer>
-              <BeatPad />
-              <Dumbbell />
-              <Bolex />
-            </ModelsContainer>
-            <div style={{ height: "7vh" }}></div>
-          </ProjectsContainer>
-        </FadeIn>
-      </Route>
-      <Route path="/projects/solin">
-        <SolinHome />
-      </Route>
-      <Route path="/projects/freesound">
-        <FreesoundHome />
-      </Route>
-      <Route path="/projects/aaronglasser">
-        <AaronGlasserHome />
-      </Route>
-    </Switch>
+    <>
+      <BackArrow />
+      <Switch>
+        <Route exact path="/projects">
+          <FadeIn>
+            <NightSky acceleration={0.05} starCount={2000} />
+            <Suspense fallback={null}>
+              <Oasis />
+            </Suspense>
+            <ProjectsContainer>
+              <h1
+                style={{
+                  color: "white",
+                  margin: "0 auto",
+                }}
+              >
+                Projects
+              </h1>
+              <ModelsContainer>
+                <BeatPad />
+                <Dumbbell />
+                <Bolex />
+              </ModelsContainer>
+              <div style={{ height: "7vh" }}></div>
+            </ProjectsContainer>
+          </FadeIn>
+        </Route>
+        <Route path="/projects/solin">
+          <SolinHome />
+        </Route>
+        <Route path="/projects/freesound">
+          <FreesoundHome />
+        </Route>
+        <Route path="/projects/aaronglasser">
+          <AaronGlasserHome />
+        </Route>
+      </Switch>
+    </>
   );
 }
+
+const BackArrow = () => {
+  return (
+    <Link to="/">
+      <img
+        src={backArrow}
+        alt="back arrow"
+        style={{
+          position: "absolute",
+          top: 50,
+          left: 50,
+          zIndex: "3",
+        }}
+      />
+    </Link>
+  );
+};
 
 const Background = styled.div`
   position: absolute;
@@ -72,7 +93,7 @@ const Background = styled.div`
 `;
 
 const ProjectsContainer = styled.div`
-  z-index: 99;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

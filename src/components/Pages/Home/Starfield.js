@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import particle from "../../../assets/1.png";
+import particle from "../../../assets/materials/1.png";
 import { AdditiveBlending } from "three";
 import Spaceship from "./Spaceship";
 

@@ -1,10 +1,13 @@
 import screenRecording from "../../../../assets/video/SamplerNotepad.webm";
 import screenRecordingDemo2 from "../../../../assets/video/SamplerNotepadDemo2.webm";
 import * as S from "../ProjectsStyles";
+import { Link } from "react-router-dom";
+import backArrow from "../../../../assets/backArrowDark.svg";
 
 export default function FreesoundHome() {
   return (
     <S.Container>
+      <BackArrow />
       <S.Header>Freesound Notepad</S.Header>
       <S.SubHeader>A creative tool for music producers</S.SubHeader>
       <S.FlexContainer style={{ padding: 0 }}>
@@ -72,3 +75,19 @@ export default function FreesoundHome() {
     </S.Container>
   );
 }
+
+const BackArrow = () => {
+  return (
+    <Link to="/projects">
+      <img
+        src={backArrow}
+        alt="back arrow"
+        style={{
+          position: "absolute",
+          top: 50,
+          left: 20,
+        }}
+      />
+    </Link>
+  );
+};

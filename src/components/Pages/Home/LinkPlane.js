@@ -14,7 +14,7 @@ export default function Links({ onWarp }) {
     >
       <DelayLink
         to="/projects"
-        delay={1500}
+        delay={1000}
         replace={false}
         clickAction={onWarp}
       >
@@ -29,7 +29,7 @@ export default function Links({ onWarp }) {
         </LinkBox>
       </DelayLink>
 
-      <DelayLink to="/about" delay={1500} replace={false} clickAction={onWarp}>
+      <DelayLink to="/about" delay={1000} replace={false} clickAction={onWarp}>
         <LinkBox
           style={{
             position: "absolute",
@@ -42,7 +42,7 @@ export default function Links({ onWarp }) {
       </DelayLink>
       <DelayLink
         to="/contact"
-        delay={1500}
+        delay={1000}
         replace={false}
         clickAction={onWarp}
       >
@@ -58,7 +58,7 @@ export default function Links({ onWarp }) {
       </DelayLink>
       <DelayLink
         to="/credits"
-        delay={1500}
+        delay={1000}
         replace={false}
         clickAction={onWarp}
       >

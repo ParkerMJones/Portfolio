@@ -4,6 +4,8 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Stars } from "../Home/Starfield";
 import { Canvas } from "@react-three/fiber";
+import backArrow from "../../../assets/arrow-left.svg";
+import { Link } from "react-router-dom";
 
 const NightSky = ({ acceleration, starCount }) => {
   return (
@@ -46,7 +48,8 @@ const Contact = () => {
     return (
       <Wrapper>
         <NightSky acceleration={0.1} starCount={20000} />
-        <div style={{ color: "white", zIndex: "99" }}>
+        <BackArrow />
+        <div style={{ color: "white", zIndex: "2" }}>
           Thank you for visiting! I'll be in touch soon.
         </div>
       </Wrapper>
@@ -55,7 +58,7 @@ const Contact = () => {
   return (
     <FadeIn>
       <NightSky acceleration={0.1} starCount={20000} />
-
+      <BackArrow />
       <Wrapper>
         <h1 style={{ color: "white" }}>Contact</h1>
         <Form ref={form} onSubmit={sendEmail}>
@@ -90,6 +93,22 @@ const Contact = () => {
   );
 };
 
+const BackArrow = () => {
+  return (
+    <Link to="/">
+      <img
+        src={backArrow}
+        alt="back arrow"
+        style={{
+          position: "absolute",
+          top: 50,
+          left: 50,
+        }}
+      />
+    </Link>
+  );
+};
+
 export default Contact;
 
 const Wrapper = styled.div`
@@ -98,7 +117,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  z-index: 99;
+  z-index: 2;
 `;
 
 const Background = styled.div`

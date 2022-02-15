@@ -2,10 +2,13 @@ import AaronHome from "../../../../assets/images/AaronHome.jpg";
 import AaronCurated from "../../../../assets/images/AaronCurated.jpg";
 import AaronDemo from "../../../../assets/video/AaronDemo.webm";
 import * as S from "../ProjectsStyles";
+import { Link } from "react-router-dom";
+import backArrow from "../../../../assets/backArrowDark.svg";
 
 export default function AaronGlasserHome() {
   return (
     <S.Container>
+      <BackArrow />
       <S.Header style={{ paddingBottom: 0 }}>AaronGlasser.com</S.Header>
       <S.FlexContainer style={{ padding: 0 }}>
         <S.Description>
@@ -73,3 +76,19 @@ export default function AaronGlasserHome() {
     </S.Container>
   );
 }
+
+const BackArrow = () => {
+  return (
+    <Link to="/projects">
+      <img
+        src={backArrow}
+        alt="back arrow"
+        style={{
+          position: "absolute",
+          top: 50,
+          left: 20,
+        }}
+      />
+    </Link>
+  );
+};
