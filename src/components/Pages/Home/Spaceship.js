@@ -1,4 +1,4 @@
-import spaceship from "../../../assets/models/spaceship.glb";
+import spaceship from "../../../assets/models/spaceship.glb?raw";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import useMousePosition from "../../../hooks/MouseTracker";
