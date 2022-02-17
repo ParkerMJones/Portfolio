@@ -4,8 +4,8 @@ import Links from "./LinkPlane";
 import Navbar from "../../Nav";
 
 export default function Home() {
-  const [acceleration, setAcceleration] = useState(0.25);
-  const [starCount, setStarCount] = useState(200000);
+  const [acceleration, setAcceleration] = useState(0.15);
+  const [starCount, setStarCount] = useState(100000);
   function onWarp() {
     setAcceleration(20);
   }

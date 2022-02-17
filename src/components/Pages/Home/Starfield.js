@@ -43,7 +43,7 @@ export const Stars = ({ acceleration, starCount }) => {
   return (
     <points args={[particlesGeometry]}>
       <pointsMaterial
-        size={0.35}
+        size={0.15}
         sizeAttenuation={true}
         color={"white"}
         map={particlesTexture}

@@ -9,7 +9,7 @@ import Oasis from "./Oasis";
 import Dumbbell from "./Dumbbell";
 import BeatPad from "./MPC";
 import Bolex from "./Bolex";
-import { Stars } from "../Home/Starfield";
+import { Stars } from "@react-three/drei";
 
 import SolinHome from "./Solin/SolinHome";
 import FreesoundHome from "./Freesound/FreesoundHome";
@@ -19,7 +19,16 @@ const NightSky = ({ acceleration, starCount }) => {
   return (
     <Background>
       <Canvas camera={{ position: [0, 0, 2] }}>
-        <Stars acceleration={acceleration} starCount={starCount} />
+        <Stars
+          radius={300}
+          depth={100}
+          count={8000}
+          factor={6}
+          saturation={0.2}
+          fade={true}
+          visible={true}
+          scale={0.5}
+        />
       </Canvas>
     </Background>
   );

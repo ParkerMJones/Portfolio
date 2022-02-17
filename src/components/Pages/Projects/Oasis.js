@@ -1,4 +1,4 @@
-import oasis from "../../../assets/models/oasisuncompressed.glb?raw";
+import oasis from "../../../assets/models/oasisuncompressed.glb";
 import * as THREE from "three";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
