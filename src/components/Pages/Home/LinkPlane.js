@@ -6,13 +6,12 @@ import { Earth } from "./Earth";
 import Astra from "./Astra";
 
 export default function Links({ onWarp }) {
-  const [dance, setDance] = useState(0);
+  const [dance, setDance] = useState(3);
   return (
     <div
       style={{
         height: "100%",
-        display: "flex",
-        flexWrap: "wrap",
+        width: "100%",
       }}
     >
       <DelayLink
@@ -31,13 +30,9 @@ export default function Links({ onWarp }) {
         </LinkBox>
       </DelayLink>
       <DelayLink to="/about" delay={1000} replace={false} clickAction={onWarp}>
-        <LinkBox
-          style={{
-            top: "5%",
-            right: "5%",
-          }}
-        >
+        <LinkBox style={{ top: "5%", right: "5%" }}>
           <LinkText>About Me</LinkText>
+
           <Canvas>
             <Suspense fallback={null}>
               <Astra dance={dance} />
@@ -45,11 +40,19 @@ export default function Links({ onWarp }) {
           </Canvas>
         </LinkBox>
       </DelayLink>
-      <div style={{ position: "absolute", zIndex: "99", bottom: "10%" }}>
-        <button onClick={() => setDance(1)}>Footwork</button>
-        <button onClick={() => setDance(2)}>Macarena</button>
-        <button onClick={() => setDance(3)}>Wave</button>
-      </div>
+      <button
+        style={{
+          position: "absolute",
+          top: "calc(5% + 16px)",
+          right: "calc(40% + 16px)",
+        }}
+        onClick={() => {
+          dance === 3 ? setDance(0) : setDance(dance + 1);
+        }}
+      >
+        {" "}
+        Next Move
+      </button>
       <DelayLink
         to="/contact"
         delay={1000}
@@ -58,12 +61,11 @@ export default function Links({ onWarp }) {
       >
         <LinkBox
           style={{
-            position: "absolute",
             bottom: "5%",
             left: "5%",
           }}
         >
-          Contact
+          <LinkText>Contact</LinkText>
         </LinkBox>
       </DelayLink>
       <DelayLink
@@ -79,7 +81,7 @@ export default function Links({ onWarp }) {
             right: "5%",
           }}
         >
-          Credits
+          <LinkText>Credits</LinkText>
         </LinkBox>
       </DelayLink>
     </div>
@@ -87,9 +89,16 @@ export default function Links({ onWarp }) {
 }
 
 const LinkBox = styled.div`
-  width: 40%;
-  height: 35%;
+  width: 30%;
+  height: 40%;
+  padding: 16px;
   position: absolute;
+
+  &:hover {
+    border: 1px solid rgba(50, 255, 50, 0.75);
+    padding: 15px;
+    box-shadow: inset 0 0 0.5rem 0.25rem rgba(50, 255, 50, 0.25);
+  }
 `;
 
 const LinkText = styled.h2`

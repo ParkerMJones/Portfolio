@@ -10,7 +10,6 @@ export default function AstraModel({ dance }) {
   const { actions } = useAnimations(animations, group);
   const prevDance = usePrevious(dance) || 0;
   useEffect(() => {
-    console.log(Object.values(actions));
     Object.values(actions)[prevDance].fadeOut(0.2);
     Object.values(actions)[prevDance].stop();
     let danceMove = Object.values(actions)[dance];
@@ -46,6 +45,10 @@ export default function AstraModel({ dance }) {
           skeleton={nodes.Ch48_hair1.skeleton}
         />
       </group>
+      <mesh rotation={[Math.PI * 1.58, 0, 0]} position={[0, -2, -2]}>
+        <planeGeometry args={[5, 5]} />
+        <meshBasicMaterial />
+      </mesh>
     </group>
   );
 }
