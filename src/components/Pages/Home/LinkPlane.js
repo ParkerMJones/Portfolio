@@ -3,7 +3,7 @@ import React, { Suspense, useState } from "react";
 import DelayLink from "react-delay-link";
 import { Canvas } from "@react-three/fiber";
 import { Earth } from "./Earth";
-import DancerModel from "./Dancer";
+import Astra from "./Astra";
 
 export default function Links({ onWarp }) {
   const [dance, setDance] = useState(0);
@@ -40,15 +40,15 @@ export default function Links({ onWarp }) {
           <LinkText>About Me</LinkText>
           <Canvas>
             <Suspense fallback={null}>
-              <DancerModel dance={dance} />
+              <Astra dance={dance} />
             </Suspense>
           </Canvas>
         </LinkBox>
       </DelayLink>
       <div style={{ position: "absolute", zIndex: "99", bottom: "10%" }}>
-        <button onClick={() => setDance(1)}>Run Forward</button>
-        <button onClick={() => setDance(2)}>Death</button>
-        <button onClick={() => setDance(3)}>Idle</button>
+        <button onClick={() => setDance(1)}>Footwork</button>
+        <button onClick={() => setDance(2)}>Macarena</button>
+        <button onClick={() => setDance(3)}>Wave</button>
       </div>
       <DelayLink
         to="/contact"

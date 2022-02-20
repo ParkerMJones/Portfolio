@@ -11,17 +11,19 @@ export default function Dancer({ dance }) {
   const { actions } = useAnimations(animations, group);
   const prevDance = usePrevious(dance) || 0;
   useEffect(() => {
+    Object.values(actions)[prevDance].fadeOut(0.2);
     Object.values(actions)[prevDance].stop();
     let danceMove = Object.values(actions)[dance];
     danceMove.play();
-  }, [dance, actions]);
+    danceMove.fadeIn(0.2);
+  }, [dance, actions, prevDance]);
   return (
     <group ref={group} dispose={null}>
       <group
         name="Armature"
         rotation={[Math.PI / 2, 0, 0]}
-        position={[0, -2, 0]}
-        scale={0.025}
+        position={[0, -2.25, 0]}
+        scale={0.55}
       >
         <primitive object={nodes.mixamorig7Hips} />
         <skinnedMesh
