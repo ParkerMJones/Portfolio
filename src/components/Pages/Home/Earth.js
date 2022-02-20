@@ -1,10 +1,10 @@
-import { useRef, Suspense } from "react";
+import { useRef } from "react";
 import EarthDayMap from "../../../assets/materials/textures/8k_earth_daymap.jpg";
 import EarthNormalMap from "../../../assets/materials/textures/8k_earth_normal_map.jpg";
 import EarthSpecularMap from "../../../assets/materials/textures/8k_earth_specular_map.jpg";
 import EarthClouds from "../../../assets/materials/textures/8k_earth_clouds.jpg";
 import * as THREE from "three";
-import { useFrame, useLoader, Canvas } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 
 export function Earth(props) {

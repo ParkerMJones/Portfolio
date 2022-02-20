@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import DelayLink from "react-delay-link";
 import { Canvas } from "@react-three/fiber";
 import { Earth } from "./Earth";
-import { Link } from "react-router-dom";
+import DancerModel from "./Dancer";
 
 export default function Links({ onWarp }) {
+  const [dance, setDance] = useState(0);
   return (
     <div
       style={{
@@ -29,18 +30,26 @@ export default function Links({ onWarp }) {
           </Canvas>
         </LinkBox>
       </DelayLink>
-
       <DelayLink to="/about" delay={1000} replace={false} clickAction={onWarp}>
         <LinkBox
           style={{
-            position: "absolute",
             top: "5%",
             right: "5%",
           }}
         >
-          About Me
+          <LinkText>About Me</LinkText>
+          <Canvas>
+            <Suspense fallback={null}>
+              <DancerModel dance={dance} />
+            </Suspense>
+          </Canvas>
         </LinkBox>
       </DelayLink>
+      <div style={{ position: "absolute", zIndex: "99", bottom: "10%" }}>
+        <button onClick={() => setDance(1)}>Run Forward</button>
+        <button onClick={() => setDance(2)}>Death</button>
+        <button onClick={() => setDance(3)}>Idle</button>
+      </div>
       <DelayLink
         to="/contact"
         delay={1000}
