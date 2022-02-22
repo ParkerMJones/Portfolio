@@ -1,8 +1,7 @@
-import FadeIn from "../../FadeIn";
 import styled from "styled-components";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { Stars } from "../Home/Starfield";
+import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import backArrow from "../../../assets/arrow-left.svg";
 import { Link } from "react-router-dom";
@@ -11,7 +10,14 @@ const NightSky = ({ acceleration, starCount }) => {
   return (
     <Background>
       <Canvas camera={{ position: [0, 0, 2] }}>
-        <Stars acceleration={acceleration} starCount={starCount} />
+        <Stars
+          radius={100}
+          depth={50}
+          count={5000}
+          factor={4}
+          saturation={0}
+          fade
+        />
       </Canvas>
     </Background>
   );
@@ -56,7 +62,7 @@ const Contact = () => {
     );
   }
   return (
-    <FadeIn>
+    <>
       <NightSky acceleration={0.1} starCount={20000} />
       <BackArrow />
       <Wrapper>
@@ -66,7 +72,7 @@ const Contact = () => {
             <Label for="name">Name</Label>
             <Input
               type="text"
-              placeholder="Faye Valentine"
+              placeholder="Ender Wiggin"
               name="user_name"
               required
             />
@@ -75,21 +81,25 @@ const Contact = () => {
             <Label for="email">Email</Label>
             <Input
               type="email"
-              placeholder="Faye@Spacemail.com"
+              placeholder="EnderWiggin@spacemail.com"
               name="user_email"
               required
             />
           </div>
           <div>
             <Label for="message">Message</Label>
-            <TextArea placeholder="Hello..." name="message" required />
+            <TextArea
+              placeholder="Hello, my name is Ender Wiggin."
+              name="message"
+              required
+            />
           </div>
           <div>
             <Button type="submit">Send Message</Button>
           </div>
         </Form>
       </Wrapper>
-    </FadeIn>
+    </>
   );
 };
 

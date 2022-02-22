@@ -1,104 +1,124 @@
 import styled from "styled-components";
-import React, { Suspense, useState } from "react";
-import DelayLink from "react-delay-link";
+import { Suspense, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { Earth } from "./Earth";
 import Astra from "./Astra";
+import Tower from "./Tower";
+
+import SwiperCore, { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+SwiperCore.use([Navigation]);
 
 export default function Links({ onWarp }) {
   const [dance, setDance] = useState(3);
+
+  const [activate, setActivate] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setActivate(!activate), 2000);
+    return () => clearTimeout(timeout);
+  }, [activate]);
+
   return (
     <div
       style={{
-        height: "100%",
+        position: "absolute",
+        top: "10%",
+        left: 0,
         width: "100%",
+        height: "calc(100vh - 10%)",
+        zIndex: "99",
       }}
     >
-      <DelayLink
-        to="/projects"
-        delay={1000}
-        replace={false}
-        clickAction={onWarp}
+      <Swiper
+        style={{ width: "95%", height: "100%", margin: "auto" }}
+        spaceBetween={0}
+        slidesPerView={1}
+        navigation
       >
-        <LinkBox style={{ top: "5%", left: "5%" }}>
-          <LinkText>Projects</LinkText>
-          <Canvas>
-            <Suspense fallback={null}>
-              <Earth />
-            </Suspense>
-          </Canvas>
-        </LinkBox>
-      </DelayLink>
-      <DelayLink to="/about" delay={1000} replace={false} clickAction={onWarp}>
-        <LinkBox style={{ top: "5%", right: "5%" }}>
-          <LinkText>About Me</LinkText>
-
-          <Canvas>
-            <Suspense fallback={null}>
-              <Astra dance={dance} />
-            </Suspense>
-          </Canvas>
-        </LinkBox>
-      </DelayLink>
-      <button
-        style={{
-          position: "absolute",
-          top: "calc(5% + 16px)",
-          right: "calc(40% + 16px)",
-        }}
-        onClick={() => {
-          dance === 3 ? setDance(0) : setDance(dance + 1);
-        }}
-      >
-        {" "}
-        Next Move
-      </button>
-      <DelayLink
-        to="/contact"
-        delay={1000}
-        replace={false}
-        clickAction={onWarp}
-      >
-        <LinkBox
-          style={{
-            bottom: "5%",
-            left: "5%",
-          }}
-        >
-          <LinkText>Contact</LinkText>
-        </LinkBox>
-      </DelayLink>
-      <DelayLink
-        to="/credits"
-        delay={1000}
-        replace={false}
-        clickAction={onWarp}
-      >
-        <LinkBox
-          style={{
-            position: "absolute",
-            bottom: "5%",
-            right: "5%",
-          }}
-        >
+        <SwiperSlide>
+          <Link to="/projects" style={{ textDecoration: "none" }}>
+            <LinkBox>
+              <LinkText>Projects</LinkText>
+              <Canvas>
+                <Suspense fallback={null}>
+                  <Earth />
+                </Suspense>
+              </Canvas>
+            </LinkBox>
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <LinkBoxNoHover>
+            <LinkBox>
+              <Link to="/about" style={{ textDecoration: "none" }}>
+                <LinkText>About Me</LinkText>
+                <Canvas>
+                  <Suspense fallback={null}>
+                    <Astra dance={dance} />
+                  </Suspense>
+                </Canvas>
+              </Link>
+            </LinkBox>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <button
+                onClick={() => {
+                  dance === 3 ? setDance(0) : setDance(dance + 1);
+                }}
+              >
+                {" "}
+                Next Move
+              </button>
+            </div>
+          </LinkBoxNoHover>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link to="/contact" style={{ textDecoration: "none" }}>
+            <LinkBox>
+              <LinkText>Contact</LinkText>
+              <Canvas>
+                <Suspense fallback={null}>
+                  <Tower />
+                </Suspense>
+              </Canvas>
+            </LinkBox>
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
           <LinkText>Credits</LinkText>
-        </LinkBox>
-      </DelayLink>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 }
 
 const LinkBox = styled.div`
-  width: 30%;
-  height: 40%;
+  margin: auto;
   padding: 16px;
-  position: absolute;
+  height: 80%;
+  width: 80%;
 
   &:hover {
-    border: 1px solid rgba(50, 255, 50, 0.75);
-    padding: 15px;
-    box-shadow: inset 0 0 0.5rem 0.25rem rgba(50, 255, 50, 0.25);
+    background-color: rgba(50, 50, 50, 0.1);
+    box-shadow: inset 0px 0px 4px 4px rgba(50, 50, 50, 0.5);
   }
+`;
+
+const LinkBoxNoHover = styled.div`
+  margin: auto;
+  padding: 16px;
+  height: 100%;
+  width: 100%;
 `;
 
 const LinkText = styled.h2`
@@ -107,27 +127,3 @@ const LinkText = styled.h2`
   text-align: center;
   margin: 0 auto;
 `;
-
-// const LinkBox = styled.h2`
-//   color: white;
-//   width: 40%;
-//   height: 35%;
-//   border: 1px solid rgba(255, 255, 255, 0.35);
-//   border-radius: 10px;
-//   box-shadow: inset 0 0 0.5rem 0.25rem rgba(255, 255, 255, 0.15);
-//   background-color: rgba(255, 255, 255, 0.015);
-//   backdrop-filter: blur(0.25px);
-//   text-align: center;
-
-//   &:before {
-//     content: "";
-//     display: inline-block;
-//     height: 100%;
-//     vertical-align: middle;
-//   }
-
-//   &:hover {
-//     border: 1px solid rgba(50, 255, 50, 0.75);
-//     box-shadow: inset 0 0 0.5rem 0.25rem rgba(50, 255, 50, 0.25);
-//   }
-// `;

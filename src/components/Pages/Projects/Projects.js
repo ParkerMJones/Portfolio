@@ -1,4 +1,3 @@
-import FadeIn from "../../FadeIn";
 import { Suspense } from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
@@ -40,7 +39,7 @@ export default function Projects() {
       <BackArrow />
       <Switch>
         <Route exact path="/projects">
-          <FadeIn>
+          <>
             <NightSky acceleration={0.05} starCount={2000} />
             <Suspense fallback={null}>
               <Oasis />
@@ -61,7 +60,7 @@ export default function Projects() {
               </ModelsContainer>
               <div style={{ height: "7vh" }}></div>
             </ProjectsContainer>
-          </FadeIn>
+          </>
         </Route>
         <Route path="/projects/solin">
           <SolinHome />

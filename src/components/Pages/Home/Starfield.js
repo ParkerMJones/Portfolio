@@ -1,9 +1,7 @@
 import * as THREE from "three";
-import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import particle from "../../../assets/materials/1.png";
 import { AdditiveBlending } from "three";
-import Spaceship from "./Spaceship";
 
 export const Stars = ({ acceleration, starCount }) => {
   // Particles
@@ -65,9 +63,9 @@ const Starfield = ({ acceleration, starCount }) => {
     >
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Stars acceleration={acceleration} starCount={starCount} />
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <Spaceship />
-        </Suspense>
+        </Suspense> */}
       </Canvas>
     </div>
   );

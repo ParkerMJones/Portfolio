@@ -24,12 +24,13 @@ export default function Spaceship() {
         is="custom"
         object={scene}
         dispose={null}
-        scale={[0.025, 0.025, 0.025]}
+        scale={[0.02, 0.02, 0.02]}
         rotation={[
           0,
           Math.PI * 0.5 + -normalize(x, 0, window.innerWidth, -1, 1),
           Math.PI * 0.025 + -normalize(y, 0, window.innerHeight, -1, 1) / 3,
         ]}
+        position={[0, -0.25, 0]}
       />
     </>
   );
