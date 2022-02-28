@@ -79,16 +79,18 @@ export default function Projects() {
 const BackArrow = () => {
   return (
     <Link to="/">
-      <img
-        src={backArrow}
-        alt="back arrow"
-        style={{
-          position: "absolute",
-          top: 50,
-          left: 50,
-          zIndex: "3",
-        }}
-      />
+      <div style={{ position: "absolute", top: "0", left: "0", zIndex: "1" }}>
+        <img
+          src={backArrow}
+          alt="back arrow"
+          style={{
+            position: "relative",
+            top: 50,
+            left: 50,
+            zIndex: "3",
+          }}
+        />
+      </div>
     </Link>
   );
 };

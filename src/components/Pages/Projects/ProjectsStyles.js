@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 2% 10%;
+  margin: 0 10%;
   padding: 2% 0;
 `;
 
@@ -15,13 +15,13 @@ export const SubHeader = styled.h3`
 `;
 
 export const Description = styled.p`
-  color: gray;
+  color: dimgray;
   max-width: 80ch;
   line-height: 2;
 `;
 
 export const FlexDescription = styled.p`
-  color: gray;
+  color: dimgray;
   max-width: 40%;
   line-height: 2;
 `;
@@ -54,7 +54,7 @@ export const FlexContainer = styled.div`
 `;
 
 export const SiteLink = styled.a`
-  color: gray;
+  color: black;
   text-decoration: none;
 
   &:hover {

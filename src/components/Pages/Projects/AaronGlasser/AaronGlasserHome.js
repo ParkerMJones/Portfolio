@@ -9,12 +9,14 @@ export default function AaronGlasserHome() {
   return (
     <S.Container>
       <BackArrow />
-      <S.Header style={{ paddingBottom: 0 }}>AaronGlasser.com</S.Header>
+      <S.Header style={{ paddingBottom: 0 }}>
+        Portfolio for Aaron Glasser
+      </S.Header>
       <S.FlexContainer style={{ padding: 0 }}>
         <S.Description>
           Site:{" "}
           <S.SiteLink href="https://www.aaronglasser.com/" target="_blank">
-            aaronglasser.com
+            Aaronglasser.com
           </S.SiteLink>
         </S.Description>
         <S.SiteLink
@@ -28,23 +30,29 @@ export default function AaronGlasserHome() {
       <S.Description>
         Aaron Glasser is a published philospher and experimental filmmaker at
         the University of Michigan. He needed a website to share his work, in
-        both the academic and creative domains, and he came to me for help. With
-        his input, I created a website that serves as a hub for his work thus
-        far.
+        both academic and creative domains, and he came to me for help. Using
+        React and styled-components, I built him a site where he can share his
+        acheivements.
       </S.Description>
-      <S.SubHeader>His Work in Film</S.SubHeader>
+      <S.SubHeader>Building a Film Library</S.SubHeader>
       <S.FlexContainer>
         <S.Image
           src={AaronCurated}
           alt="An example flyer from one of Aaron Glasser's curated programs"
         />
         <S.FlexDescription>
-          Aaron is involved in the experimental film community, both as creator
-          and curator. His deep library of films, previously only on Vimeo, is
-          now available to those who visit his site. A flexible layout is used
-          to ensure responsiveness on any device, and video controls are
-          provided by the Vimeo player. He has curated several events to share
-          intriguing and often obsure films to those who are interested.
+          Aaron's films were previously hosted only on Vimeo, so I built him a
+          library by fetching his videos from Vimeo and wrapping them each in a
+          React Player object. This allowed me to load only the thumbnails on
+          page load, and the selected video on a user's click, leading to faster
+          load times and less unnecesary data. A flexible layout is used to
+          ensure responsiveness on any device, and video controls are provided
+          by Vimeo.
+          <br />
+          He's curated a number of events, flyers for which were archived on the
+          hosting theater's website. I used the information to create a
+          historical catalog of his programs, enabling him to share with
+          prospective employers and friends.
         </S.FlexDescription>
       </S.FlexContainer>
       <br />
@@ -53,9 +61,11 @@ export default function AaronGlasserHome() {
         <S.FlexDescription>
           <S.SubHeader style={{ color: "black" }}>In Philosophy</S.SubHeader>
           Aaron is a published philospher who writes on subjects centered around
-          mind-wandering and mental illness. His essays are available to read
-          directly from his website, and a PDF is available for those who want
-          to download.
+          mind-wandering and mental illness. To make his essays available here,
+          I translated text from PDF to JSX, paying careful attention to
+          emphasis and structure. An added benefit was the addition of
+          hyperlinks to works cited where applicable, making access to further
+          reading more convenient.
         </S.FlexDescription>
         <S.Image
           src={AaronHome}
@@ -64,13 +74,21 @@ export default function AaronGlasserHome() {
       </S.FlexContainer>
       <S.SubHeader>Experiments and the Future</S.SubHeader>
       <S.Description>
-        His recent experiments involve live video performance using colors and
+        His recent experiments involve live visual performance using colors and
         images played via a midi controller. The "Image Instrument Demo" is a
         simplified demonstration of his idea. This demo was built using P5.js,
         and it functions by responding to user input on a keyboard. Although
-        simple, the demo version can be surprisingly fun to use. Aaron is
-        currently pursuing his PhD in Philosophy at the University of Michigan
-        and has several papers currently undergoing peer review.
+        simple, the demo version can be surprisingly fun to use. Images and
+        video may be integrated in the future, although this element is meant
+        only as a demo. Aaron is currently pursuing his PhD in Philosophy at the
+        University of Michigan and has several papers currently undergoing peer
+        review. Watch his films{" "}
+        <S.SiteLink
+          href="https://www.aaronglasser.com/movies/library"
+          target="_blank"
+        >
+          here.
+        </S.SiteLink>
       </S.Description>
       <S.FlexGIF src={AaronDemo} autoPlay type="video/webm" loop></S.FlexGIF>
     </S.Container>

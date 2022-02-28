@@ -21,7 +21,7 @@ export default function FreesoundHome() {
           </S.SiteLink>
         </S.Description>
         <S.SiteLink
-          href="https://github.com/ParkerMJones/AaronGlasser"
+          href="https://github.com/ParkerMJones/Freesound-Notepad"
           target="_blank"
         >
           Github
@@ -30,8 +30,8 @@ export default function FreesoundHome() {
       <S.Description>
         As a music producer, I'm frequently looking for new sounds to use in my
         music. It isn't always obvious where to find these sounds, or even what
-        I'm looking for. Sometimes, I just want to be surprised. Using the
-        Freesound.org API, I can explore new sounds with ease.
+        I'm looking for. Sometimes, I just want to be surprised (or lazy). Using
+        the Freesound.org API, I can find inspiration effortlessly.
       </S.Description>
       <S.GIF src={screenRecording} autoPlay type="video/webm" loop></S.GIF>
       <S.SubHeader>Functionality</S.SubHeader>
@@ -55,22 +55,23 @@ export default function FreesoundHome() {
         {" "}
         For the background, description tags are taken from the audio and used
         to query the "Pexels" API, a site that hosts royalty free images and
-        videos by independent visual artists. The added stimulation may immerse
-        the user in a creative mood, or it may just give them something to watch
-        while the sounds play out. Recently, a user requested that a link to the
-        background video be added, so that they could use it in a visual
-        production. It feels great to be able to help people find creative
-        inspiration, even in domains beyond the application's original
+        videos by independent visual artists. This feature brings a unique
+        feeling to every new batch of sounds. Recently, a user requested that a
+        link to the background video be added, so that they could use it in a
+        visual production. It feels great to be able to help people find
+        creative inspiration, even in domains beyond the application's original
         intention.
       </S.Description>
       <S.SubHeader>Reflection</S.SubHeader>
       <S.Description>
-        All of this together constitutes a useful tool for music producers and
-        fellow creatives in their quest for experimentation and discovery. This
+        Together this constitutes a useful tool for music producers and fellow
+        creatives in their quest for experimentation and discovery. This
         application was built for a group project in my web development
-        bootcamp, and it's still one of my favorites. I use it consitently for
-        my personal use, and building it was a great experience in learning how
-        to work within a team and in querying for data from third-party APIs.
+        bootcamp, and it's still one of my favorites. It's built with vanilla
+        Javascript and HTML, and styled with the Skeleton CSS framework. I use
+        it consitently for my personal use, and building it was a great
+        experience in working with a team, in building an application on
+        fundamental principles, and in responding to user interactions.
       </S.Description>
     </S.Container>
   );
@@ -78,7 +79,7 @@ export default function FreesoundHome() {
 
 const BackArrow = () => {
   return (
-    <Link to="/projects">
+    <Link exact to="/projects">
       <img
         src={backArrow}
         alt="back arrow"
