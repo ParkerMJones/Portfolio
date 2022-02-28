@@ -22,7 +22,7 @@ export function Earth(props) {
 
   return (
     <>
-      <mesh ref={cloudsRef} scale={2}>
+      <mesh ref={cloudsRef} scale={1.5}>
         <sphereGeometry args={[1.005, 32, 32]} />
         <meshBasicMaterial
           map={cloudsMap}
@@ -32,7 +32,7 @@ export function Earth(props) {
           side={THREE.DoubleSide}
         />
       </mesh>
-      <mesh ref={planetRef} scale={2}>
+      <mesh ref={planetRef} scale={1.5}>
         <sphereGeometry args={[1, 32, 32]} />
         <meshBasicMaterial map={colorMap} metalness={0.4} roughness={0.7} />
       </mesh>

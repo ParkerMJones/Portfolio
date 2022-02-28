@@ -10,7 +10,6 @@ export const Stars = ({ acceleration, starCount }) => {
 
   // Geometry
   const particlesGeometry = new THREE.BufferGeometry();
-  // const count = 50000;
 
   const positions = new Float32Array(starCount * 3);
 
@@ -57,15 +56,12 @@ const Starfield = ({ acceleration, starCount }) => {
   return (
     <div
       style={{
-        height: "calc(100vh - 40px)",
+        height: "calc(100vh - 72px)",
         backgroundColor: "black",
       }}
     >
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Stars acceleration={acceleration} starCount={starCount} />
-        {/* <Suspense fallback={null}>
-          <Spaceship />
-        </Suspense> */}
       </Canvas>
     </div>
   );

@@ -6,7 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import backArrow from "../../../assets/arrow-left.svg";
 import { Link } from "react-router-dom";
 
-const NightSky = ({ acceleration, starCount }) => {
+const NightSky = () => {
   return (
     <Background>
       <Canvas camera={{ position: [0, 0, 2] }}>
@@ -53,7 +53,7 @@ const Contact = () => {
   if (submitted) {
     return (
       <Wrapper>
-        <NightSky acceleration={0.1} starCount={20000} />
+        <NightSky />
         <BackArrow />
         <div style={{ color: "white", zIndex: "2" }}>
           Thank you for visiting! I'll be in touch soon.
@@ -63,7 +63,7 @@ const Contact = () => {
   }
   return (
     <>
-      <NightSky acceleration={0.1} starCount={20000} />
+      <NightSky />
       <BackArrow />
       <Wrapper>
         <h1 style={{ color: "white" }}>Contact</h1>
@@ -89,7 +89,7 @@ const Contact = () => {
           <div>
             <Label for="message">Message</Label>
             <TextArea
-              placeholder="Hello, my name is Ender Wiggin."
+              placeholder="Hello, my name is Ender Wiggin and I like your website."
               name="message"
               required
             />
@@ -127,7 +127,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  z-index: 2;
 `;
 
 const Background = styled.div`
@@ -135,6 +134,7 @@ const Background = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: black;
+  z-index: -1;
 `;
 
 const Label = styled.label`
@@ -191,7 +191,7 @@ const Button = styled.button`
   border-radius: 5px;
 
   &:hover {
-    background-color: rgba(5, 230, 5, 0.75);
+    background-color: rgba(5, 150, 5, 0.75);
   }
 `;
 

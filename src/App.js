@@ -1,12 +1,9 @@
 import "./App.css";
 import Home from "./components/Pages/Home/Home";
 import Projects from "./components/Pages/Projects/Projects";
-import Animations from "./components/Pages/Credits/Credits";
 import About from "./components/Pages/About/About";
 import Contact from "./components/Pages/Contact/Contact";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/Nav";
-// import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 function App() {
   return (
@@ -23,9 +20,6 @@ function App() {
         </Route>
         <Route path="/contact">
           <Contact />
-        </Route>
-        <Route path="/credits">
-          <Animations />
         </Route>
       </Switch>
     </Router>

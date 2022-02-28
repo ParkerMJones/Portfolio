@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 
 import backArrow from "../../../assets/arrow-left.svg";
-import Oasis from "./Oasis";
+import Oasis from "../../../assets/models/OasisModel";
 import Dumbbell from "./Dumbbell";
 import BeatPad from "./MPC";
 import Bolex from "./Bolex";
@@ -14,7 +14,7 @@ import SolinHome from "./Solin/SolinHome";
 import FreesoundHome from "./Freesound/FreesoundHome";
 import AaronGlasserHome from "./AaronGlasser/AaronGlasserHome";
 
-const NightSky = ({ acceleration, starCount }) => {
+const NightSky = () => {
   return (
     <Background>
       <Canvas camera={{ position: [0, 0, 2] }}>
@@ -49,6 +49,7 @@ export default function Projects() {
                 style={{
                   color: "white",
                   margin: "0 auto",
+                  zIndex: 1,
                 }}
               >
                 Projects
@@ -58,7 +59,6 @@ export default function Projects() {
                 <Dumbbell />
                 <Bolex />
               </ModelsContainer>
-              <div style={{ height: "7vh" }}></div>
             </ProjectsContainer>
           </>
         </Route>
@@ -101,7 +101,6 @@ const Background = styled.div`
 `;
 
 const ProjectsContainer = styled.div`
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -113,6 +112,7 @@ const ModelsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  z-index: 2;
   width: 100vw;
-  gap: 32px;
+  gap: 128px;
 `;

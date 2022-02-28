@@ -134,7 +134,7 @@ export default function TowerModel({ ...props }) {
         scale={[0.49, -0.28, 0.57]}
       />
       <pointLight color={"red"} position={[0, 12.85, 0]} intensity={sine * 2} />
-      <mesh position={[0, 13, 0]} scale={0.6}>
+      <mesh position={[0, 13, 0]} scale={0.55}>
         <sphereGeometry />
         <meshBasicMaterial
           color={`rgb(${Math.floor(sine * 255)}, 0, 0)`}
