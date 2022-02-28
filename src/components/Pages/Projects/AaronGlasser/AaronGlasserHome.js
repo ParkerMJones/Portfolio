@@ -59,7 +59,9 @@ export default function AaronGlasserHome() {
       <br />
       <S.FlexContainer>
         <S.FlexDescription>
-          <S.SubHeader style={{ color: "black" }}>In Philosophy</S.SubHeader>
+          <S.SubHeader style={{ color: "black", fontFamily: "Exon" }}>
+            In Philosophy
+          </S.SubHeader>
           Aaron is a published philospher who writes on subjects centered around
           mind-wandering and mental illness. To make his essays available here,
           I translated text from PDF to JSX, paying careful attention to

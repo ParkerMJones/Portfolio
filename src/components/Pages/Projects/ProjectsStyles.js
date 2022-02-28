@@ -18,12 +18,14 @@ export const Description = styled.p`
   color: dimgray;
   max-width: 80ch;
   line-height: 2;
+  font-family: "Roboto", sans-serif;
 `;
 
 export const FlexDescription = styled.p`
   color: dimgray;
   max-width: 40%;
   line-height: 2;
+  font-family: "Roboto", sans-serif;
 `;
 
 export const Image = styled.img`

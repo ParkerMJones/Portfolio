@@ -23,7 +23,7 @@ export default function Bolex() {
             animate={{
               translateY: [-20, 20],
               transition: {
-                duration: 2,
+                duration: 2.2,
                 type: "spring",
                 yoyo: Infinity,
                 delay: 0.6,

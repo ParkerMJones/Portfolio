@@ -21,7 +21,7 @@ export default function Dumbbell() {
             animate={{
               translateY: [-20, 20],
               transition: {
-                duration: 2,
+                duration: 2.3,
                 type: "spring",
                 yoyo: Infinity,
                 delay: 0.2,
