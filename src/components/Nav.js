@@ -6,6 +6,7 @@ export default function Nav() {
     <Navbar>
       <Logo src={astronaut} alt="Parker Jones" />
       <p>Parker Jones</p>
+      <p>|</p>
       <p>Front-End Developer</p>
     </Navbar>
   );
@@ -18,7 +19,7 @@ const Navbar = styled.nav`
   text-align: center;
   vertical-align: baseline;
   display: flex;
-  gap: 48px;
+  gap: 16px;
   align-items: center;
   justify-content: flex-start;
   padding-left: 48px;
@@ -28,6 +29,5 @@ const Navbar = styled.nav`
 const Logo = styled.img`
   height: 40px;
   width: 40px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px 8px;
 `;
