@@ -1,4 +1,4 @@
-import AstronautModel from "../../../assets/models/AstronautModel";
+import AstronautModel from "../../../assets/Models/AstronautModel";
 
 export default function Astronaut() {
   return (

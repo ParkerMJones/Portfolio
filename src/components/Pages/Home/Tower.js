@@ -1,4 +1,4 @@
-import TowerModel from "../../../assets/models/RadioTower";
+import TowerModel from "../../../assets/Models/RadioTower";
 
 export default function Tower() {
   return (
