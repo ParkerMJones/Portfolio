@@ -1,7 +1,8 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
+import Loader from "../../Loader";
 
 import backArrow from "../../../assets/arrow-left.svg";
 import Oasis from "../../../assets/Models/OasisModel";
@@ -34,6 +35,12 @@ const NightSky = () => {
 };
 
 export default function Projects() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  if (!!isLoading) {
+    return <Loader />;
+  }
+
   return (
     <>
       <BackArrow />
