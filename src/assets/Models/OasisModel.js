@@ -11,49 +11,12 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import oasisBaked from "../materials/Oasisbake.jpg";
 import { Water } from "three/examples/jsm/objects/Water.js";
-// import { useRef, useMemo } from "react";
+import lava from "../materials/textures/Lava_005_COLOR.jpg";
 
 extend({ Water });
 
-// function Ocean() {
-//   const ref = useRef();
-//   const gl = useThree((state) => state.gl);
-//   const waterNormals = useLoader(
-//     THREE.TextureLoader,
-//     "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/waternormals.jpg"
-//   );
-
-//   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
-//   const geom = useMemo(() => new THREE.PlaneGeometry(30000, 30000), []);
-//   const config = useMemo(
-//     () => ({
-//       textureWidth: 512,
-//       textureHeight: 512,
-//       waterNormals,
-//       sunDirection: new THREE.Vector3(),
-//       sunColor: 0xeb8934,
-//       waterColor: 0x0064b5,
-//       distortionScale: 40,
-//       fog: false,
-//       format: gl.encoding,
-//     }),
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//     [waterNormals]
-//   );
-//   useFrame(
-//     (state, delta) => (ref.current.material.uniforms.time.value += delta)
-//   );
-//   return (
-//     <water
-//       ref={ref}
-//       args={[geom, config]}
-//       rotation-x={-Math.PI / 2}
-//       position={[0, 0, 0]}
-//     />
-//   );
-// }
-
 export default function Oasis() {
+  // Oasis Texture
   const bakedTexture = useLoader(TextureLoader, oasisBaked);
   bakedTexture.flipY = false;
   bakedTexture.encoding = THREE.sRGBEncoding;
@@ -62,6 +25,10 @@ export default function Oasis() {
   gltf.scene.traverse(function (child) {
     child.material = bakedMaterial;
   });
+
+  // Lava Texture
+  const lavaTexture = useLoader(TextureLoader, lava);
+  lavaTexture.repeat.set(0.85, 0.85);
 
   return (
     <>
@@ -84,11 +51,10 @@ export default function Oasis() {
               />
             </mesh>
             <mesh rotation={[Math.PI * 1.58, 0, 0]} position={[0, -4, -12]}>
-              <planeGeometry args={[500, 500]} />
-              <meshBasicMaterial color="red" />
+              <planeGeometry attach="geometry" args={[500, 500]} />
+              <meshBasicMaterial attach="material" map={lavaTexture} />
             </mesh>
           </group>
-          {/* <Ocean /> */}
         </Canvas>
       </div>
     </>
