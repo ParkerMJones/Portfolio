@@ -71,6 +71,7 @@ export default function Oasis() {
           camera={{ position: [0, 0, 0] }}
           style={{ height: "100vh", width: "100vw" }}
         >
+          <ambientLight intensity={1} />
           <group>
             <mesh>
               <primitive
@@ -81,6 +82,10 @@ export default function Oasis() {
                 position={[13, -7, 10]}
                 rotation={[Math.PI * 0.07, Math.PI * 0.36, 0]}
               />
+            </mesh>
+            <mesh rotation={[Math.PI * 1.58, 0, 0]} position={[0, -4, -12]}>
+              <planeGeometry args={[500, 500]} />
+              <meshBasicMaterial color="red" />
             </mesh>
           </group>
           {/* <Ocean /> */}

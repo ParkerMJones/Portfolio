@@ -9,7 +9,6 @@ import LoaderShip from "../assets/images/LoaderShip.png";
 
 const Loader = () => {
   const duration = 1.25;
-  const ellipsis = [1, 2, 3];
   return (
     <>
       <LoaderBackground>

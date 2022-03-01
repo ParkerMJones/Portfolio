@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
@@ -35,7 +35,11 @@ const NightSky = () => {
 };
 
 export default function Projects() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // useEffect(() => {
+  //   setIsLoading(false);
+  // }, []);
 
   if (!!isLoading) {
     return <Loader />;

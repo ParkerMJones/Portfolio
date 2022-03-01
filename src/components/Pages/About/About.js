@@ -61,15 +61,16 @@ export default function About() {
           artist grow too. That's what excites me most about learning new
           technologies: they lend themselves to new creative potential.
           <br />
-          My latest experiments involve controlling visual systems, like Unreal
-          Engine, Processing, and Three.Js, using analog control voltages from a
-          modular synthesizer. From the analog values, I extract OSC (Open Sound
-          Control) messages, and send them to a server. The server then sends
-          the OSC messages to the visual system as parameters I can use, giving
-          me an improvisational audio/visual instrument. I'm passionate about
-          using technology to advance the capabilities of live performance in
-          electronic music, and I hope that I can make substantial contributions
-          with my work.
+          By making my own tools, I'm able to develop my own pipeline, where
+          more and more of the system is an extension of myself. For this
+          portfolio, I created my own low-poly models in Blender, when pre-made
+          ones were too computationally expensive. I wrote custom hooks when
+          something didn't quite work right with the package I reached for, or
+          when I couldn't find a ready-made solution to suit my needs. Using
+          existing tools is a great way to learn and expedite development, but I
+          find that by building my own, I have more control and a better
+          understanding of the system I'm constructing. I'm building my own
+          machines.
           <br />
           Below are some examples of my music. "Interstice" is a collection of
           music I made by writing algorithms to generate patterns, using
