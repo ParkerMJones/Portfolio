@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tooltip from "../../Tooltip";
-import freesound from "../../../assets/images/FreesoundHover.png";
+import Solin from "../../../assets/video/SolinPromo.webm";
 
 export default function Dumbbell() {
   return (
@@ -11,7 +11,7 @@ export default function Dumbbell() {
       <Tooltip
         content={
           <>
-            <HoverImage src={freesound} alt="Freesound" />
+            <GIF src={Solin} autoPlay type="video/webm" loop></GIF>
             <p>Solin Fitness. The Home of Social Fitness.</p>
           </>
         }
@@ -41,7 +41,7 @@ const Image = styled.img`
   height: 150px;
 `;
 
-const HoverImage = styled.img`
+const GIF = styled.video`
   width: 100%;
   height: auto;
 `;

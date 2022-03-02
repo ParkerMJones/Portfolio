@@ -9,10 +9,12 @@ import { useFrame } from "@react-three/fiber";
 export default function TowerModel({ ...props }) {
   const group = useRef();
   const [sine, setSine] = useState(0);
+
   useFrame(({ clock }) => {
     const a = Math.sin(clock.getElapsedTime()) * 0.5 + 0.5;
     setSine(a);
   });
+
   const { nodes } = useGLTF("/radioTower.glb");
   return (
     <group

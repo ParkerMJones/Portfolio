@@ -34,6 +34,12 @@ export const Image = styled.img`
   border-radius: 10px;
 `;
 
+export const VerticalImage = styled.img`
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+`;
+
 export const GIF = styled.video`
   padding: 1% 0;
   width: 80%;
