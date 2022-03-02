@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
@@ -37,40 +37,34 @@ const NightSky = () => {
 export default function Projects() {
   const [isLoading, setIsLoading] = useState(true);
 
-  const Oasis = () => {
-    return (
-      <div style={{ position: "absolute", height: "100vh" }}>
-        <Canvas
-          colorManagement="srgb"
-          camera={{ position: [0, 0, 0] }}
-          style={{ height: "100vh", width: "100vw" }}
-        >
-          <OasisSetup />
-        </Canvas>
-      </div>
-    );
-  };
-
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 4000);
   }, []);
-
-  if (!!isLoading) {
-    return <Loader />;
-  }
 
   return (
     <>
+      {isLoading ? <Loader /> : null}
       <BackArrow />
       <Switch>
         <Route exact path="/projects">
           <>
             <NightSky acceleration={0.05} starCount={2000} />
-            <Suspense fallback={null}>
+            <div style={{ position: "absolute", height: "100vh" }}>
+              <Canvas
+                colorManagement="srgb"
+                camera={{ position: [0, 0, 0] }}
+                style={{ height: "100vh", width: "100vw" }}
+              >
+                <Suspense fallback={null}>
+                  <OasisSetup />
+                </Suspense>
+              </Canvas>
+            </div>
+            {/* <Suspense fallback={null}>
               <Oasis />
-            </Suspense>
+            </Suspense> */}
             <ProjectsContainer>
               <h1
                 style={{

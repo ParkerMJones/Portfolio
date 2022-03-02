@@ -10,14 +10,23 @@ import LoaderShip from "../assets/images/LoaderShip.png";
 const Loader = () => {
   const duration = 1.25;
   return (
-    <>
+    <div
+      style={{
+        position: "absolute",
+        left: 0,
+        top: 0,
+        height: "100vh",
+        width: "100vw",
+        zIndex: 99,
+      }}
+    >
       <LoaderBackground>
         <motion.img
           src={LoaderShip}
           alt="loader"
           style={{ width: 100 }}
           animate={{
-            translateY: [-60, 60],
+            translateY: [0, 60],
             transition: {
               duration: duration,
               type: "spring",
@@ -98,7 +107,7 @@ const Loader = () => {
           </motion.span>
         </h3>
       </LoaderBackground>
-    </>
+    </div>
   );
 };
 
