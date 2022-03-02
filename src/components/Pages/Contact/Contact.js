@@ -69,7 +69,7 @@ const Contact = () => {
         <h1 style={{ color: "white" }}>Contact</h1>
         <Form ref={form} onSubmit={sendEmail}>
           <div>
-            <Label for="name">Name</Label>
+            <Label htmlfor="name">Name</Label>
             <Input
               type="text"
               placeholder="Jar Jar Binks"
@@ -78,7 +78,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <Label for="email">Email</Label>
+            <Label htmlfor="email">Email</Label>
             <Input
               type="email"
               placeholder="Jarjar@spacemail.com"
@@ -87,7 +87,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <Label for="message">Message</Label>
+            <Label htmlfor="message">Message</Label>
             <TextArea
               placeholder="Well, hello there!"
               name="message"
@@ -197,4 +197,8 @@ const Button = styled.button`
 
 const Form = styled.form`
   width: 40vw;
+
+  @media (max-width: 1000px) {
+    width: 70vw;
+  }
 `;

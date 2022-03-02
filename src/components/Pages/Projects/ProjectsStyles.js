@@ -21,9 +21,19 @@ export const Description = styled.p`
   font-family: "Roboto", sans-serif;
 `;
 
+export const AboutDescription = styled.p`
+  color: dimgray;
+  max-width: 80ch;
+  line-height: 2;
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+  text-indent: 2em;
+`;
+
 export const FlexDescription = styled.p`
   color: dimgray;
-  max-width: 40%;
+  width: 40%;
+  min-width: 300px;
   line-height: 2;
   font-family: "Roboto", sans-serif;
 `;
@@ -49,12 +59,14 @@ export const GIF = styled.video`
 export const FlexGIF = styled.video`
   padding: 1% 0;
   width: 40%;
+  min-width: 250px;
   height: auto;
   border-radius: 10px;
 `;
 
 export const FlexContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 32px;
   justify-content: flex-start;
   align-items: center;

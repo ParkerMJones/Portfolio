@@ -38,7 +38,7 @@ export default function About() {
             Github
           </S.SiteLink>
         </S.FlexContainer>
-        <S.Description style={{ textAlign: "justify" }}>
+        <S.AboutDescription>
           Years ago I read a pamphlet called "The Art of Noise" by Luigi
           Russolo. In the early 20th century, machines consumed urban
           landscapes, their humming and puttering took over the frequency
@@ -46,7 +46,8 @@ export default function About() {
           clamor. He built machines from scratch to emulate these sounds. He
           heard an opportunity for a new type of orchestra. He declared noise an
           instrument.
-          <br />
+        </S.AboutDescription>
+        <S.AboutDescription>
           My fascination with sound led to a fascination with technology, and to
           the places where they meet to make something new. I started coding
           because it was the only way to make the sounds I wanted to make and
@@ -57,7 +58,8 @@ export default function About() {
           creative technologist. While I continue to grow in software, my skills
           as an artist grow too. That's what excites me most about learning new
           technologies: they lend themselves to new creative potential.
-          <br />
+        </S.AboutDescription>
+        <S.AboutDescription>
           By making my own tools, I'm able to develop a tailored workflow, where
           the system is an extension of myself. For this portfolio, I created my
           own low-poly models in Blender, I wrote hooks for niche cases, and I
@@ -65,13 +67,14 @@ export default function About() {
           existing tools is great, but when I build my own, I have more control
           and a better understanding of the system I'm constructing. I'm
           building my own machines.
-          <br />
+        </S.AboutDescription>
+        <S.AboutDescription>
           Below are some examples of my music. "Interstice" is a collection of
           music I made by writing algorithms to generate patterns, using
           SuperCollider and Max/MSP. The results are excerpts from longer
           generative explorations. "Be Flea" is an indulgence in carefree EDM
           silliness.
-        </S.Description>
+        </S.AboutDescription>
         <div
           style={{
             display: "flex",
