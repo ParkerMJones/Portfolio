@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import bolex from "../../../assets/images/bolex.png";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import festering from "../../../assets/video/AaronTooltip.webm";
+import festering from "../../../assets/video/AaronTooltip.mp4";
 import Tooltip from "../../Tooltip";
 
 export default function Bolex() {
@@ -11,7 +11,7 @@ export default function Bolex() {
       <Tooltip
         content={
           <>
-            <GIF src={festering} autoPlay type="video/webm" loop></GIF>
+            <GIF src={festering} autoPlay type="video/mp4" loop></GIF>
             <p>
               Portfolio Website for Filmmaker and Philosopher Aaron Glasser.
             </p>

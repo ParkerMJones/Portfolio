@@ -16,7 +16,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f8f8ff;
-  /* cursor: url("./assets/crosshair.svg"), auto; */
 }
 
 code {

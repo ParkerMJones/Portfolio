@@ -1,5 +1,5 @@
-import screenRecording from "../../../../assets/video/SamplerNotepad.webm";
-import screenRecordingDemo2 from "../../../../assets/video/SamplerNotepadDemo2.webm";
+import screenRecording from "../../../../assets/video/SamplerNotepad.mp4";
+import screenRecordingDemo2 from "../../../../assets/video/SamplerNotepad2.mp4";
 import * as S from "../ProjectsStyles";
 import { Link } from "react-router-dom";
 import backArrow from "../../../../assets/backArrowDark.svg";
@@ -33,7 +33,7 @@ export default function FreesoundHome() {
         I'm looking for. Sometimes, I just want to be surprised (or lazy). Using
         the Freesound.org API, I can find inspiration effortlessly.
       </S.Description>
-      <S.GIF src={screenRecording} autoPlay type="video/webm" loop></S.GIF>
+      <S.GIF src={screenRecording} autoPlay type="video/mp4" loop></S.GIF>
       <S.SubHeader>Functionality</S.SubHeader>
       <S.Description>
         {" "}
@@ -49,7 +49,7 @@ export default function FreesoundHome() {
         intentional sound foraging, and the entire set of sounds can be saved in
         local storage with a preset name.
       </S.Description>
-      <S.GIF src={screenRecordingDemo2} autoPlay type="video/webm" loop></S.GIF>
+      <S.GIF src={screenRecordingDemo2} autoPlay type="video/mp4" loop></S.GIF>
       <S.SubHeader>Background Video</S.SubHeader>
       <S.Description>
         {" "}

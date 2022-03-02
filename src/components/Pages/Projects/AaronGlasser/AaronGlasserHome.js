@@ -1,6 +1,6 @@
 import AaronHome from "../../../../assets/images/AaronHome.jpg";
 import AaronCurated from "../../../../assets/images/AaronCurated.jpg";
-import AaronDemo from "../../../../assets/video/AaronDemo.webm";
+import AaronDemo from "../../../../assets/video/AaronDemo.mp4";
 import * as S from "../ProjectsStyles";
 import { Link } from "react-router-dom";
 import backArrow from "../../../../assets/backArrowDark.svg";
@@ -92,7 +92,7 @@ export default function AaronGlasserHome() {
           here.
         </S.SiteLink>
       </S.Description>
-      <S.FlexGIF src={AaronDemo} autoPlay type="video/webm" loop></S.FlexGIF>
+      <S.FlexGIF src={AaronDemo} autoPlay type="video/mp4" loop></S.FlexGIF>
     </S.Container>
   );
 }

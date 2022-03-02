@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tooltip from "../../Tooltip";
-import Solin from "../../../assets/video/SolinPromo.webm";
+import Solin from "../../../assets/video/SolinPromo.mp4";
 
 export default function Dumbbell() {
   return (
@@ -11,7 +11,7 @@ export default function Dumbbell() {
       <Tooltip
         content={
           <>
-            <GIF src={Solin} autoPlay type="video/webm" loop></GIF>
+            <GIF src={Solin} autoPlay type="video/mp4" loop></GIF>
             <p>Solin Fitness. The Home of Social Fitness.</p>
           </>
         }

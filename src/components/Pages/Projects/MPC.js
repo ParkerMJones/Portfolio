@@ -2,7 +2,7 @@ import MPC from "../../../assets/images/MPCStatic.png";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import freesound from "../../../assets/video/FreesoundTooltip.webm";
+import freesound from "../../../assets/video/FreesoundTooltip.mp4";
 import Tooltip from "../../Tooltip";
 
 export default function BeatPad() {
@@ -11,7 +11,7 @@ export default function BeatPad() {
       <Tooltip
         content={
           <>
-            <GIF src={freesound} autoPlay type="video/webm" loop></GIF>
+            <GIF src={freesound} autoPlay type="video/mp4" loop></GIF>
             <p>
               Freesound Notepad. A sample discovery tool for music producers.
             </p>
