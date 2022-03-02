@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import Loader from "../../Loader";
 
 import backArrow from "../../../assets/arrow-left.svg";
-import Oasis from "../../../assets/Models/OasisModel";
+import OasisSetup from "../../../assets/Models/OasisModel";
 import Dumbbell from "./Dumbbell";
 import BeatPad from "./MPC";
 import Bolex from "./Bolex";
@@ -31,6 +31,21 @@ const NightSky = () => {
         />
       </Canvas>
     </Background>
+  );
+};
+
+const Oasis = () => {
+  return (
+    <div style={{ position: "absolute", height: "100vh" }}>
+      <Canvas
+        colorManagement="srgb"
+        camera={{ position: [0, 0, 0] }}
+        performance={{ min: 0.5, max: 1 }}
+        style={{ height: "100vh", width: "100vw" }}
+      >
+        <OasisSetup />
+      </Canvas>
+    </div>
   );
 };
 
