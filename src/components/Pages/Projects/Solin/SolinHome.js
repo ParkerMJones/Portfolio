@@ -29,7 +29,7 @@ export default function FreesoundHome() {
         <img
           src={cinco}
           alt="Fitness Creator Cinco"
-          style={{ width: "60%", borderRadius: 10 }}
+          style={{ width: "80%", borderRadius: 10 }}
         ></img>
         <S.SubHeader>My Contributions</S.SubHeader>
         <S.Description>
@@ -53,13 +53,17 @@ export default function FreesoundHome() {
           wherever possible has resulted in a streamlined and consistent
           application that creators can enjoy using.
         </S.Description>
-        <S.SubHeader>Before</S.SubHeader>
-        <S.VerticalImage
-          src={OldDashboardLibrary}
-          alt="Dashboard Before"
-        ></S.VerticalImage>
-        <S.SubHeader>After</S.SubHeader>
-        <S.Image src={NewDashboardLibrary} alt="Dashboard After"></S.Image>
+        <S.SubHeader>Before vs. After</S.SubHeader>
+        <S.FlexContainer>
+          <S.VerticalImage
+            src={OldDashboardLibrary}
+            alt="Dashboard Before"
+          ></S.VerticalImage>
+          <S.VerticalImage
+            src={NewDashboardLibrary}
+            alt="Dashboard After"
+          ></S.VerticalImage>
+        </S.FlexContainer>
         <S.SubHeader>Challenges</S.SubHeader>
         <S.Description>
           {" "}
@@ -89,10 +93,10 @@ export default function FreesoundHome() {
 
 const BackArrow = () => {
   return (
-    <Link exact to="/projects">
-      <div style={{ paddingTop: "5%", paddingLeft: "2%" }}>
+    <div style={{ padding: "5% 0 0 5%", maxWidth: "fit-content" }}>
+      <Link to="/projects">
         <img src={backArrow} alt="back arrow" />
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };

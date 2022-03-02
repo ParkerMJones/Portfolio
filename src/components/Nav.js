@@ -4,10 +4,12 @@ import astronaut from "../assets/images/astronaut.png";
 export default function Nav() {
   return (
     <Navbar>
-      <Logo src={astronaut} alt="Parker Jones" />
-      <p>Parker Jones</p>
-      <p>|</p>
-      <p>Front-End Developer</p>
+      <InnerWrapper>
+        <Logo src={astronaut} alt="Parker Jones" />
+        <p>Parker Jones</p>
+        <p>|</p>
+        <p>Front-End Developer</p>
+      </InnerWrapper>
     </Navbar>
   );
 }
@@ -22,8 +24,17 @@ const Navbar = styled.nav`
   gap: 16px;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 48px;
   padding: 16px;
+`;
+
+const InnerWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 26px;
+  gap: 16px;
+  height: 100%;
+  width: 95%;
 `;
 
 const Logo = styled.img`

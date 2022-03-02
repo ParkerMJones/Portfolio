@@ -36,47 +36,41 @@ export default function AaronGlasserHome() {
           acheivements.
         </S.Description>
         <S.SubHeader>Building a Film Library</S.SubHeader>
-        <S.FlexContainer>
-          <S.Image
-            src={AaronCurated}
-            alt="An example flyer from one of Aaron Glasser's curated programs"
-            style={{ minWidth: 250 }}
-          />
-          <S.FlexDescription>
-            Aaron's films were previously hosted only on Vimeo, so I built him a
-            library by fetching his videos from Vimeo and wrapping them each in
-            a React Player object. This allowed me to load only the thumbnails
-            on page load, and the selected video on a user's click, leading to
-            faster load times and less unnecesary data. A flexible layout is
-            used to ensure responsiveness on any device, and video controls are
-            provided by Vimeo.
-            <br />
-            He's curated a number of events, flyers for which were archived on
-            the hosting theater's website. I used the information to create a
-            historical catalog of his programs, enabling him to share with
-            prospective employers and friends.
-          </S.FlexDescription>
-        </S.FlexContainer>
-        <br />
-        <br />
-        <S.FlexContainer>
-          <S.FlexDescription>
-            <S.SubHeader style={{ color: "black", fontFamily: "Exon" }}>
-              In Philosophy
-            </S.SubHeader>
-            Aaron is a published philospher who writes on subjects centered
-            around mind-wandering and mental illness. To make his essays
-            available here, I translated text from PDF to JSX, paying careful
-            attention to emphasis and structure. An added benefit was the
-            addition of hyperlinks to works cited where applicable, making
-            access to further reading more convenient.
-          </S.FlexDescription>
-          <S.Image
-            src={AaronHome}
-            alt="An excerpt from Aaron Glasser's published philosophy"
-            style={{ minWidth: 250 }}
-          />
-        </S.FlexContainer>
+
+        <S.Image
+          src={AaronCurated}
+          alt="An example flyer from one of Aaron Glasser's curated programs"
+          style={{ width: "55ch" }}
+        />
+        <S.Description>
+          Aaron's films were previously hosted only on Vimeo, so I built him a
+          library by fetching his videos from Vimeo and wrapping them each in a
+          React Player object. This allowed me to load only the thumbnails on
+          page load, and the selected video on a user's click, leading to faster
+          load times and less unnecesary data. A flexible layout is used to
+          ensure responsiveness on any device, and video controls are provided
+          by Vimeo.
+          <br />
+          He's curated a number of events, flyers for which were archived on the
+          hosting theater's website. I used the information to create a
+          historical catalog of his programs, enabling him to share with
+          prospective employers and friends.
+        </S.Description>
+
+        <S.SubHeader>In Philosophy</S.SubHeader>
+        <S.Description>
+          Aaron is a published philospher who writes on subjects centered around
+          mind-wandering and mental illness. To make his essays available here,
+          I translated text from PDF to JSX, paying careful attention to
+          emphasis and structure. An added benefit was the addition of
+          hyperlinks to works cited where applicable, making access to further
+          reading more convenient.
+        </S.Description>
+        <S.Image
+          src={AaronHome}
+          alt="An excerpt from Aaron Glasser's published philosophy"
+          style={{ width: "80%" }}
+        />
         <S.SubHeader>Experiments and the Future</S.SubHeader>
         <S.Description>
           His recent experiments involve live visual performance using colors
@@ -95,7 +89,7 @@ export default function AaronGlasserHome() {
             here.
           </S.SiteLink>
         </S.Description>
-        <S.FlexGIF src={AaronDemo} autoPlay type="video/mp4" loop></S.FlexGIF>
+        <S.GIF src={AaronDemo} autoPlay type="video/mp4" loop></S.GIF>
       </S.Container>
       );
     </>
@@ -104,10 +98,10 @@ export default function AaronGlasserHome() {
 
 const BackArrow = () => {
   return (
-    <Link exact to="/projects">
-      <div style={{ paddingTop: "5%", paddingLeft: "2%" }}>
+    <div style={{ padding: "5% 0 0 5%", maxWidth: "fit-content" }}>
+      <Link to="/projects">
         <img src={backArrow} alt="back arrow" />
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };

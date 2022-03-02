@@ -46,25 +46,22 @@ export default function Projects() {
   return (
     <>
       {isLoading ? <Loader /> : null}
-      <BackArrow />
       <Switch>
         <Route exact path="/projects">
           <>
             <NightSky acceleration={0.05} starCount={2000} />
+            <BackArrow />
             <div style={{ position: "absolute", height: "100vh" }}>
               <Canvas
                 colorManagement="srgb"
                 camera={{ position: [0, 0, 0] }}
-                style={{ height: "100vh", width: "100vw" }}
+                style={{ height: "100%", width: "100vw" }}
               >
                 <Suspense fallback={null}>
                   <OasisSetup />
                 </Suspense>
               </Canvas>
             </div>
-            {/* <Suspense fallback={null}>
-              <Oasis />
-            </Suspense> */}
             <ProjectsContainer>
               <h1
                 style={{
@@ -99,20 +96,19 @@ export default function Projects() {
 
 const BackArrow = () => {
   return (
-    <Link to="/">
-      <div style={{ position: "absolute", top: "0", left: "0", zIndex: "1" }}>
-        <img
-          src={backArrow}
-          alt="back arrow"
-          style={{
-            position: "relative",
-            top: 50,
-            left: 50,
-            zIndex: "3",
-          }}
-        />
-      </div>
-    </Link>
+    <div
+      style={{
+        position: "absolute",
+        top: "5%",
+        left: "5%",
+        maxWidth: "fit-content",
+        zIndex: 3,
+      }}
+    >
+      <Link to="/projects">
+        <img src={backArrow} alt="back arrow" />
+      </Link>
+    </div>
   );
 };
 

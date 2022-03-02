@@ -112,7 +112,9 @@ export default function About() {
 const BackArrow = () => {
   return (
     <Link exact to="/projects">
-      <div style={{ paddingTop: "5%", paddingLeft: "2%" }}>
+      <div
+        style={{ paddingTop: "5%", paddingLeft: "2%", maxWidth: "fitContent" }}
+      >
         <img src={backArrow} alt="back arrow" />
       </div>
     </Link>

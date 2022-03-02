@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  margin: 0 10%;
-  padding: 2% 0;
+export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2% 5% 2% 5%;
+  max-width: 120ch;
+  margin: 0 auto;
 `;
 
 export const Header = styled.h1`
@@ -16,38 +20,29 @@ export const SubHeader = styled.h3`
 
 export const Description = styled.p`
   color: dimgray;
-  max-width: 80ch;
   line-height: 2;
   font-family: "Roboto", sans-serif;
 `;
 
 export const AboutDescription = styled.p`
   color: dimgray;
-  max-width: 80ch;
   line-height: 2;
   font-family: "Roboto", sans-serif;
   text-align: justify;
   text-indent: 2em;
 `;
 
-export const FlexDescription = styled.p`
-  color: dimgray;
-  width: 40%;
-  min-width: 300px;
-  line-height: 2;
-  font-family: "Roboto", sans-serif;
-`;
-
 export const Image = styled.img`
-  width: 40%;
   height: auto;
   border-radius: 10px;
+  max-width: 100%;
 `;
 
 export const VerticalImage = styled.img`
-  width: 40%;
-  height: auto;
+  max-height: 500px;
+  aspect-ratio: preserve;
   border-radius: 10px;
+  padding: 0 16px;
 `;
 
 export const GIF = styled.video`
@@ -68,7 +63,7 @@ export const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding: 2% 0;
 `;

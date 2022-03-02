@@ -14,19 +14,19 @@ SwiperCore.use([Navigation]);
 
 function Links({ onWarp }) {
   return (
-    <div
+    <main
       style={{
         position: "absolute",
-        top: 92,
+        top: "calc(10% + 40px)",
         left: 0,
         width: "100%",
-        height: "calc(100vh - 124px)",
+        height: "calc(100vh - 15% - 40px)",
         zIndex: "99",
         paddingTop: "32px",
       }}
     >
       <Swiper
-        style={{ width: "95%", height: "100%", margin: "auto" }}
+        style={{ width: "95%", height: "90%", margin: "auto" }}
         spaceBetween={0}
         slidesPerView={1}
         navigation
@@ -44,18 +44,16 @@ function Links({ onWarp }) {
           </LinkBox>
         </SwiperSlide>
         <SwiperSlide>
-          <LinkBoxNoHover>
-            <LinkBox>
-              <Link to="/about" style={{ textDecoration: "none" }}>
-                <LinkText>About Me</LinkText>
-                <Canvas>
-                  <Suspense fallback={null}>
-                    <Astronaut />
-                  </Suspense>
-                </Canvas>
-              </Link>
-            </LinkBox>
-          </LinkBoxNoHover>
+          <LinkBox>
+            <Link to="/about" style={{ textDecoration: "none" }}>
+              <LinkText>About Me</LinkText>
+              <Canvas>
+                <Suspense fallback={null}>
+                  <Astronaut />
+                </Suspense>
+              </Canvas>
+            </Link>
+          </LinkBox>
         </SwiperSlide>
         <SwiperSlide>
           <LinkBox>
@@ -70,7 +68,7 @@ function Links({ onWarp }) {
           </LinkBox>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </main>
   );
 }
 
@@ -79,20 +77,13 @@ export default withRouter(Links);
 const LinkBox = styled.div`
   margin: auto;
   padding: 16px;
-  height: 80%;
+  height: 90%;
   width: 80%;
 
   &:hover {
     background-color: rgba(50, 50, 50, 0.1);
     box-shadow: inset 0px 0px 4px 4px rgba(50, 50, 50, 0.5);
   }
-`;
-
-const LinkBoxNoHover = styled.div`
-  margin: auto;
-  padding: 16px;
-  height: 100%;
-  width: 100%;
 `;
 
 const LinkText = styled.h2`
