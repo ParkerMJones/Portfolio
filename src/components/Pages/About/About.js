@@ -39,13 +39,13 @@ export default function About() {
           </S.SiteLink>
         </S.FlexContainer>
         <S.Description style={{ textAlign: "justify" }}>
-          I'm here because of a pamphlet called "The Art of Noise" by Luigi
+          Years ago I read a pamphlet called "The Art of Noise" by Luigi
           Russolo. In the early 20th century, machines consumed urban
           landscapes, their humming and puttering took over the frequency
           spectrum. Some hated the noise, but Russolo found inspiration in the
           clamor. He built machines from scratch to emulate these sounds. He
-          heard an opportunity for new tones, new instruments. He declared noise
-          an instrument.
+          heard an opportunity for a new type of orchestra. He declared noise an
+          instrument.
           <br />
           My fascination with sound led to a fascination with technology, and to
           the places where they meet to make something new. I started coding

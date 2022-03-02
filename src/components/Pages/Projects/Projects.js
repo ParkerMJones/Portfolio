@@ -54,7 +54,7 @@ export default function Projects() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 3000);
   }, []);
 
   if (!!isLoading) {
