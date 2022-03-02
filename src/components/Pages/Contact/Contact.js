@@ -72,7 +72,7 @@ const Contact = () => {
             <Label for="name">Name</Label>
             <Input
               type="text"
-              placeholder="Nancy Drew"
+              placeholder="Jar Jar Binks"
               name="user_name"
               required
             />
@@ -81,7 +81,7 @@ const Contact = () => {
             <Label for="email">Email</Label>
             <Input
               type="email"
-              placeholder="detectiveNancy@emailfordetectives.com"
+              placeholder="Jarjar@spacemail.com"
               name="user_email"
               required
             />
@@ -89,7 +89,7 @@ const Contact = () => {
           <div>
             <Label for="message">Message</Label>
             <TextArea
-              placeholder="Well, hello there!  My name is Nancy Drew.  I'm a detective, and I'm here to help you solve mysteries."
+              placeholder="Well, hello there!"
               name="message"
               required
             />
