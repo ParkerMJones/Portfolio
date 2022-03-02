@@ -27,7 +27,7 @@ const OasisSetup = () => {
 
   // Lava Texture
   let lavaRepeat = 2;
-  let lavaSpeed = 0.00005;
+  let lavaSpeed = 0.000075;
   const [
     lavaColor,
     lavaDisplacementMap,
@@ -67,7 +67,7 @@ const OasisSetup = () => {
 
   return (
     <>
-      <pointLight intensity={1.75} position={[0, 1, 0]} color={"#FFE373"} />
+      <pointLight intensity={2} position={[0, 1, 0]} color={"#FFE373"} />
       <group>
         <mesh>
           <primitive
@@ -81,14 +81,14 @@ const OasisSetup = () => {
         </mesh>
         <mesh rotation={[Math.PI * 1.58, 0, 0]} position={[0, -4, -12]}>
           <planeGeometry args={[500, 500]} />
-          <meshPhongMaterial
+          <meshStandardMaterial
             displacementScale={1.5}
             map={lavaColor}
             normalMap={lavaNormalMap}
             displacementMap={lavaDisplacementMap}
             roughnessMap={lavaRoughnessMap}
             aoMap={lavaAOMap}
-            emissive={"#F83A0C"}
+            emissive={"#cf1020"}
             emissiveIntensity={0.5}
             emissiveMap={lavaColor}
           />
