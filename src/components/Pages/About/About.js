@@ -39,38 +39,32 @@ export default function About() {
           </S.SiteLink>
         </S.FlexContainer>
         <S.Description style={{ textAlign: "justify" }}>
-          A pamphlet called "The Art of Noise" by Luigi Russolo changed my life.
-          As machines consumed urban landscapes in the late 19th and early 20th
-          centuries, humming factories and puttering cars took over the
-          frequency spectrum. Most people ignored or detested the noise, but
-          Russolo found inspiration in the clamoring timbres. He built machines
-          from scratch to emulate the sounds. He heard an opportunity for new
-          tones, new instruments, and new methods of composition. His ideas
-          followed the pursuits of dissonance by Jazz and Classical composers to
-          their conclusions, by declaring noise an instrument. His inventions
-          ushered in the current era of noise and electronic music.
+          I'm here because of a pamphlet called "The Art of Noise" by Luigi
+          Russolo. In the early 20th century, machines consumed urban
+          landscapes, their humming and puttering took over the frequency
+          spectrum. Some hated the noise, but Russolo found inspiration in the
+          clamor. He built machines from scratch to emulate these sounds. He
+          heard an opportunity for new tones, new instruments. He declared noise
+          an instrument.
           <br />
           My fascination with sound led to a fascination with technology, and to
           the places where they meet to make something new. I started coding
-          because it was the only way to make the sounds I wanted to make, to
+          because it was the only way to make the sounds I wanted to make and
           build the systems I wanted to build. My education at Vanderbilt's Web
           Development Bootcamp helped me evolve professionally as well as
-          personally, to create amazing things. Adding to my time spent at Icon
-          Collective's School of Music Production, I feel capable as a creative
-          technologist. While I continue to grow in software, my skills as an
-          artist grow too. That's what excites me most about learning new
+          personally, to create amazing things. Added to my time at Icon
+          Collective's School of Music Production, I'm now operating as a
+          creative technologist. While I continue to grow in software, my skills
+          as an artist grow too. That's what excites me most about learning new
           technologies: they lend themselves to new creative potential.
           <br />
-          By making my own tools, I'm able to develop my own pipeline, where
-          more and more of the system is an extension of myself. For this
-          portfolio, I created my own low-poly models in Blender, when pre-made
-          ones were too computationally expensive. I wrote custom hooks when
-          something didn't quite work right with the package I reached for, or
-          when I couldn't find a ready-made solution to suit my needs. Using
-          existing tools is a great way to learn and expedite development, but I
-          find that by building my own, I have more control and a better
-          understanding of the system I'm constructing. I'm building my own
-          machines.
+          By making my own tools, I'm able to develop a tailored workflow, where
+          the system is an extension of myself. For this portfolio, I created my
+          own low-poly models in Blender, I wrote hooks for niche cases, and I
+          devised solutions to problems that were uniquely my own. Using
+          existing tools is great, but when I build my own, I have more control
+          and a better understanding of the system I'm constructing. I'm
+          building my own machines.
           <br />
           Below are some examples of my music. "Interstice" is a collection of
           music I made by writing algorithms to generate patterns, using
