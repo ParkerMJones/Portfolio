@@ -34,27 +34,28 @@ const NightSky = () => {
   );
 };
 
-const Oasis = () => {
-  return (
-    <div style={{ position: "absolute", height: "100vh" }}>
-      <Canvas
-        colorManagement="srgb"
-        camera={{ position: [0, 0, 0] }}
-        performance={{ min: 0.5, max: 1 }}
-        style={{ height: "100vh", width: "100vw" }}
-      >
-        <OasisSetup />
-      </Canvas>
-    </div>
-  );
-};
-
 export default function Projects() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   setIsLoading(false);
-  // }, []);
+  const Oasis = () => {
+    return (
+      <div style={{ position: "absolute", height: "100vh" }}>
+        <Canvas
+          colorManagement="srgb"
+          camera={{ position: [0, 0, 0] }}
+          style={{ height: "100vh", width: "100vw" }}
+        >
+          <OasisSetup />
+        </Canvas>
+      </div>
+    );
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
 
   if (!!isLoading) {
     return <Loader />;

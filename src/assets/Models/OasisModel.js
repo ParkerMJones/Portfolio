@@ -2,7 +2,6 @@ import oasis from "./oasis.glb";
 import * as THREE from "three";
 import {
   // useThree,
-  Canvas,
   useFrame,
   useLoader,
 } from "@react-three/fiber";
@@ -11,11 +10,11 @@ import { TextureLoader } from "three/src/loaders/TextureLoader";
 import oasisBaked from "../materials/Oasisbake.jpg";
 import lava from "../materials/textures/Lava_005_COLOR.jpg";
 import lavaNormal from "../materials/textures/Lava_005_NORM.jpg";
+import lavaRoughness from "../materials/textures/Lava_005_ROUGH.jpg";
 import lavaDisplacement from "../materials/textures/Lava_005_DISP.png";
-import lavaRoughness from "../materials/textures/Lava_005_DISP.png";
 import lavaAO from "../materials/textures/Lava_005_OCC.jpg";
 
-function OasisSetup() {
+const OasisSetup = () => {
   // Dune Texture
   const bakedTexture = useLoader(TextureLoader, oasisBaked);
   bakedTexture.flipY = false;
@@ -27,13 +26,14 @@ function OasisSetup() {
   });
 
   // Lava Texture
-  let lavaRepeat = 0.9;
+  let lavaRepeat = 2;
+  let lavaSpeed = 0.00005;
   const [
     lavaColor,
     lavaDisplacementMap,
     lavaNormalMap,
     lavaRoughnessMap,
-    lavaAmbientOcclusion,
+    lavaAOMap,
   ] = useLoader(TextureLoader, [
     lava,
     lavaDisplacement,
@@ -45,19 +45,29 @@ function OasisSetup() {
   lavaNormalMap.repeat.set(lavaRepeat, lavaRepeat);
   lavaDisplacementMap.repeat.set(lavaRepeat, lavaRepeat);
   lavaRoughnessMap.repeat.set(lavaRepeat, lavaRepeat);
-  lavaAmbientOcclusion.repeat.set(lavaRepeat, lavaRepeat);
-  useFrame(({ clock }) => {
-    const delta = clock.getDelta() * 5;
-    lavaColor.offset.y += delta;
-    lavaNormalMap.offset.y += delta;
-    lavaDisplacementMap.offset.y += delta;
-    lavaRoughnessMap.offset.y += delta;
-    lavaAmbientOcclusion.offset.y += delta;
+  lavaAOMap.repeat.set(lavaRepeat, lavaRepeat);
+
+  lavaColor.wrapS = THREE.RepeatWrapping;
+  lavaColor.wrapT = THREE.RepeatWrapping;
+  lavaNormalMap.wrapS = THREE.RepeatWrapping;
+  lavaNormalMap.wrapT = THREE.RepeatWrapping;
+  lavaDisplacementMap.wrapS = THREE.RepeatWrapping;
+  lavaDisplacementMap.wrapT = THREE.RepeatWrapping;
+  lavaRoughnessMap.wrapS = THREE.RepeatWrapping;
+  lavaRoughnessMap.wrapT = THREE.RepeatWrapping;
+  lavaAOMap.wrapS = THREE.RepeatWrapping;
+  lavaAOMap.wrapT = THREE.RepeatWrapping;
+  useFrame(() => {
+    lavaColor.offset.y += lavaSpeed;
+    lavaDisplacementMap.offset.y += lavaSpeed;
+    lavaNormalMap.offset.y += lavaSpeed;
+    lavaRoughnessMap.offset.y += lavaSpeed;
+    lavaAOMap.offset.y += lavaSpeed;
   });
 
   return (
     <>
-      <pointLight intensity={1.5} position={[0, 1, 0]} />
+      <pointLight intensity={1.75} position={[0, 1, 0]} color={"#FFE373"} />
       <group>
         <mesh>
           <primitive
@@ -71,18 +81,21 @@ function OasisSetup() {
         </mesh>
         <mesh rotation={[Math.PI * 1.58, 0, 0]} position={[0, -4, -12]}>
           <planeGeometry args={[500, 500]} />
-          <meshStandardMaterial
-            displacementScale={2}
+          <meshPhongMaterial
+            displacementScale={1.5}
             map={lavaColor}
             normalMap={lavaNormalMap}
             displacementMap={lavaDisplacementMap}
             roughnessMap={lavaRoughnessMap}
-            ambientOcclusionMap={lavaAmbientOcclusion}
+            aoMap={lavaAOMap}
+            emissive={"#F83A0C"}
+            emissiveIntensity={0.5}
+            emissiveMap={lavaColor}
           />
         </mesh>
       </group>
     </>
   );
-}
+};
 
 export default OasisSetup;
