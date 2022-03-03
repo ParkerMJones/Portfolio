@@ -31,7 +31,7 @@ const InnerWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 26px;
+  padding-left: 2.5%;
   gap: 16px;
   height: 100%;
   width: 95%;

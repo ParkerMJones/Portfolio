@@ -105,7 +105,7 @@ const BackArrow = () => {
         zIndex: 3,
       }}
     >
-      <Link to="/projects">
+      <Link exact to="/">
         <img src={backArrow} alt="back arrow" />
       </Link>
     </div>

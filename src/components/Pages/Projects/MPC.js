@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import freesound from "../../../assets/video/FreesoundTooltip.mp4";
 import Tooltip from "../../Tooltip";
+import Popover from "../../Popover";
 
 export default function BeatPad() {
   return (
