@@ -27,11 +27,11 @@ export default function About() {
               width: "105px",
             }}
             animate={{
-              translateY: [5, 90],
-              translateX: [-90, -5],
-              rotateZ: [-65, -5],
+              translateY: [5, 100],
+              translateX: [-90, -40, -5],
+              rotateZ: [-25, -55, -15],
               transition: {
-                duration: 9,
+                duration: 32,
                 type: "spring",
                 yoyo: Infinity,
               },
