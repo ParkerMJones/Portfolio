@@ -49,7 +49,7 @@ const CenterContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 50%;
+  left: 33%;
   bottom: calc(100% + 5px);
   pointer-events: none;
 `;
