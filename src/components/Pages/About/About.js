@@ -22,17 +22,19 @@ export default function About() {
             alt="astronaut"
             style={{
               position: "absolute",
-              top: "5%",
-              right: "5%",
-              width: "105px",
+              top: "6%",
+              right: "6%",
+              width: "100px",
             }}
             animate={{
-              translateY: [5, 100],
-              translateX: [-90, -40, -5],
-              rotateZ: [-25, -55, -15],
+              translateY: [5, 90],
+              translateX: [-70, -15, -50],
+              rotateZ: [-25, -55, -65],
               transition: {
-                duration: 32,
+                duration: 36,
                 type: "spring",
+                damping: 20,
+                mass: 6,
                 yoyo: Infinity,
               },
             }}
