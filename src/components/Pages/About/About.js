@@ -20,13 +20,18 @@ export default function About() {
           <motion.img
             src={astronaut}
             alt="astronaut"
-            style={{ width: 100 }}
+            style={{
+              position: "absolute",
+              top: "5%",
+              right: "5%",
+              width: "105px",
+            }}
             animate={{
-              translateY: [60, 5],
-              translateX: [-60, -10],
-              rotateZ: [-50, -5],
+              translateY: [5, 90],
+              translateX: [-90, -5],
+              rotateZ: [-65, -5],
               transition: {
-                duration: 8,
+                duration: 9,
                 type: "spring",
                 yoyo: Infinity,
               },
