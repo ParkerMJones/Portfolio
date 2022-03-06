@@ -3,7 +3,7 @@ import OldDashboardLibrary from "../../../../assets/images/OldDashboardLibrary.j
 import NewDashboardLibrary from "../../../../assets/images/NewDashboardLibrary.jpg";
 import * as S from "../ProjectsStyles";
 import { Link } from "react-router-dom";
-import backArrow from "../../../../assets/backArrowDark.svg";
+import backArrow from "../../../../assets/chevronLeftDark.svg";
 
 export default function FreesoundHome() {
   return (

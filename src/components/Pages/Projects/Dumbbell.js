@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tooltip from "../../Tooltip";
-import Solin from "../../../assets/video/SolinPromo.mp4";
+import Solin from "../../../assets/videos/SolinPromo.mp4";
 
 export default function Dumbbell() {
   return (

@@ -1,6 +1,6 @@
 import * as S from "../Projects/ProjectsStyles";
 import { Link } from "react-router-dom";
-import backArrow from "../../../assets/backArrowDark.svg";
+import backArrow from "../../../assets/chevronLeftDark.svg";
 import astronaut from "../../../assets/images/astronaut2.png";
 import { motion } from "framer-motion";
 

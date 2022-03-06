@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import backArrow from "../../../assets/arrow-left.svg";
+import backArrow from "../../../assets/chevronLeftLight.svg";
 import { Link } from "react-router-dom";
 
 const NightSky = () => {

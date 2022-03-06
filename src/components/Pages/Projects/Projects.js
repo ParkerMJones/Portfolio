@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../../Loader";
 
-import backArrow from "../../../assets/arrow-left.svg";
+import backArrow from "../../../assets/chevronLeftLight.svg";
 import OasisSetup from "../../../assets/Models/OasisModel";
 import Dumbbell from "./Dumbbell";
 import BeatPad from "./MPC";

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import bolex from "../../../assets/images/bolex.png";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import festering from "../../../assets/video/AaronTooltip.mp4";
+import festering from "../../../assets/videos/AaronTooltip.mp4";
 import Tooltip from "../../Tooltip";
 
 export default function Bolex() {

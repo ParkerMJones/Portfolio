@@ -2,7 +2,7 @@ import MPC from "../../../assets/images/MPCStatic.png";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import freesound from "../../../assets/video/FreesoundTooltip.mp4";
+import freesound from "../../../assets/videos/FreesoundTooltip.mp4";
 import Tooltip from "../../Tooltip";
 
 export default function BeatPad() {

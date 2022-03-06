@@ -1,8 +1,8 @@
-import screenRecording from "../../../../assets/video/SamplerNotepad.mp4";
-import screenRecordingDemo2 from "../../../../assets/video/SamplerNotepad2.mp4";
+import screenRecording from "../../../../assets/videos/SamplerNotepad.mp4";
+import screenRecordingDemo2 from "../../../../assets/videos/SamplerNotepad2.mp4";
 import * as S from "../ProjectsStyles";
 import { Link } from "react-router-dom";
-import backArrow from "../../../../assets/backArrowDark.svg";
+import backArrow from "../../../../assets/chevronLeftDark.svg";
 
 export default function FreesoundHome() {
   return (

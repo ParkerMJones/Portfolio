@@ -1,9 +1,9 @@
 import AaronHome from "../../../../assets/images/AaronHome.jpg";
 import AaronCurated from "../../../../assets/images/AaronCurated.jpg";
-import AaronDemo from "../../../../assets/video/AaronDemo.mp4";
+import AaronDemo from "../../../../assets/videos/AaronDemo.mp4";
 import * as S from "../ProjectsStyles";
 import { Link } from "react-router-dom";
-import backArrow from "../../../../assets/backArrowDark.svg";
+import backArrow from "../../../../assets/chevronLeftDark.svg";
 
 export default function AaronGlasserHome() {
   return (
